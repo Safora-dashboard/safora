@@ -14,7 +14,9 @@ Node.js 20 or later is required. The website and preview server have no runtime 
 npm run dev
 ```
 
-Open **http://localhost:4175**. Set `PORT` to choose another port. The server binds to loopback, serves only `dist/`, supports GET/HEAD and provides correct MIME types for JavaScript modules and images.
+Open **http://localhost:4175**. Set `LANDING_PORT` to choose another port. The server binds to loopback, serves only `dist/`, supports GET/HEAD and provides correct MIME types for JavaScript modules and images.
+
+This project is independent of the application dashboard. It needs no SQL Server, dashboard API, authentication configuration or dashboard `.env`. All commands run from this repository. Generic `PORT` and `BASE_URL` variables are ignored so inherited dashboard settings cannot redirect this site's server or browser tests. No `.env` file is loaded automatically. See [AGENTS.md](AGENTS.md) for the repository boundaries and workflow.
 
 ## Development
 
@@ -32,7 +34,7 @@ npm run test:e2e
 - `test`: Node's built-in test runner verifies HTTP behavior, MIME types and path isolation, including encoded traversal and malformed requests.
 - `test:e2e`: Playwright checks three product views at seven widths (320–1920px), keyboard tabs, finding details, focus containment/restoration, mobile navigation, FAQ disclosures, contact links and essential content without JavaScript. Axe scans desktop and mobile with the finding panel closed and open.
 
-GitHub Actions runs these checks on pushes to `main` and pull requests. Browser reports and failure traces are uploaded as workflow artifacts. Local results are ignored by Git. `BASE_URL` can point browser tests at another deployment; omit it to use the automatically managed local preview server.
+GitHub Actions runs these checks on pushes to `main` and pull requests. Browser reports and failure traces are uploaded as workflow artifacts. Local results are ignored by Git. `LANDING_BASE_URL` can point browser tests at another deployment; omit it to use the automatically managed local preview server on `LANDING_PORT` (default `4175`).
 
 ## Source layout
 

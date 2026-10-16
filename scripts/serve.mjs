@@ -1,10 +1,8 @@
 import { fileURLToPath } from 'node:url';
 import { createStaticServer } from './static-server.mjs';
+import { getLandingPort } from './config.mjs';
 
-const port = Number(process.env.PORT ?? 4175);
-if (!Number.isInteger(port) || port < 1 || port > 65535) {
-  throw new Error('PORT must be an integer between 1 and 65535.');
-}
+const port = getLandingPort();
 
 const server = createStaticServer(fileURLToPath(new URL('../dist/', import.meta.url)));
 server.on('error', (error) => {

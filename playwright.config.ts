@@ -1,4 +1,8 @@
 import { defineConfig } from '@playwright/test';
+import { getLandingPort } from './scripts/config.mjs';
+
+const localURL = `http://127.0.0.1:${getLandingPort()}`;
+const remoteURL = process.env.LANDING_BASE_URL;
 
 export default defineConfig({
   testDir: './tests/browser',
@@ -8,16 +12,16 @@ export default defineConfig({
   retries: process.env.CI ? 1 : 0,
   reporter: [['list'], ['html', { open: 'never' }]],
   use: {
-    baseURL: process.env.BASE_URL ?? 'http://127.0.0.1:4175',
+    baseURL: remoteURL ?? localURL,
     browserName: 'chromium',
     trace: 'retain-on-failure',
     screenshot: 'only-on-failure',
   },
-  webServer: process.env.BASE_URL
+  webServer: remoteURL
     ? undefined
     : {
         command: 'node scripts/serve.mjs',
-        url: 'http://127.0.0.1:4175',
+        url: localURL,
         reuseExistingServer: !process.env.CI,
       },
 });

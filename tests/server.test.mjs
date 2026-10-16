@@ -4,6 +4,16 @@ import { mkdtemp, mkdir, writeFile, rm } from 'node:fs/promises';
 import { tmpdir } from 'node:os';
 import path from 'node:path';
 import { createStaticServer } from '../scripts/static-server.mjs';
+import { getLandingPort } from '../scripts/config.mjs';
+
+test('landing port settings are isolated from dashboard environment variables', () => {
+  assert.equal(getLandingPort({}), 4175);
+  assert.equal(getLandingPort({ PORT: '3000', BASE_URL: 'http://localhost:5173' }), 4175);
+  assert.equal(getLandingPort({ LANDING_PORT: '4185', PORT: '3000' }), 4185);
+  for (const port of ['', '0', '-1', '65536', '4175.5', 'invalid']) {
+    assert.throws(() => getLandingPort({ LANDING_PORT: port }), /LANDING_PORT/);
+  }
+});
 
 test('static server handles assets, HEAD, malformed requests and path escapes', async (context) => {
   const workspace = await mkdtemp(path.join(tmpdir(), 'safora-static-'));

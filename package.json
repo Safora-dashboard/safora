@@ -2,6 +2,11 @@
   "name": "safora-landing",
   "version": "2.0.0",
   "private": true,
+  "description": "Standalone SAFORA marketing site and illustrative product explorer",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Safora-dashboard/safora.git"
+  },
   "type": "module",
   "engines": {
     "node": ">=20"
