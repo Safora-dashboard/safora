@@ -1,1 +1,18 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><rect width="48" height="48" rx="12" fill="#0c0d10"/><path d="M30 11 14 25h12l-8 12 17-16H23z" fill="#b3ff83"/></svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="SAFORA">
+  <defs>
+    <linearGradient id="gold" x1="52" y1="6" x2="11" y2="58" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#FFCF2F"/>
+      <stop offset="0.55" stop-color="#FF8A00"/>
+      <stop offset="1" stop-color="#D99A00"/>
+    </linearGradient>
+    <linearGradient id="purple" x1="16" y1="13" x2="52" y2="47" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#4A00E8"/>
+      <stop offset="1" stop-color="#1730F5"/>
+    </linearGradient>
+  </defs>
+  <rect width="64" height="64" rx="14" fill="#FFFFFF"/>
+  <path d="M8 34 C20 20 36 10 56 5 C45 19 33 27 15 36 C12 37 10 38 8 34 Z" fill="url(#gold)"/>
+  <path d="M9 50 C21 37 36 28 57 21 C46 36 31 46 12 55 C11 53 10 51 9 50 Z" fill="url(#gold)"/>
+  <path d="M20 19 C35 15 49 24 56 36 C44 30 31 29 20 38 C15 42 12 46 10 50 C9 36 12 24 20 19 Z" fill="url(#purple)"/>
+  <path d="M39 15 C43 19 45 25 41 32 C36 28 31 26 24 26 C28 20 33 16 39 15 Z" fill="#070B3F" opacity="0.92"/>
+</svg>

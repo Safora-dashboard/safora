@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Agent Health">
+  <defs><linearGradient id="g" x1="17" y1="7" x2="48" y2="59"><stop stop-color="#7C3AED"/><stop offset="1" stop-color="#24008F"/></linearGradient></defs>
+  <path fill="url(#g)" d="M32 4 52 12v15.6C52 42 44.1 53.8 32 60 19.9 53.8 12 42 12 27.6V12L32 4Z"/>
+  <path fill="none" stroke="#fff" stroke-linejoin="round" stroke-width="5" d="M32 17 43 21.3v9.4c0 7.6-4 13.8-11 17.4-7-3.6-11-9.8-11-17.4v-9.4L32 17Z"/>
+</svg>

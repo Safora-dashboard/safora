@@ -1,6 +1,6 @@
 # SAFORA landing page
 
-Independent, dependency-free startup marketing site for SAFORA. The visual direction is a security signal room: dark graphite, SAFORA violet, lime signal accents, and a custom SVG attack-path illustration.
+Independent, dependency-free startup marketing site for SAFORA, maintained in https://github.com/Safora-dashboard/safora. The visual design follows the SAFORA dashboard: white cards, navy typography, purple accents, 12px card radii and the original logo and module icons.
 
 ## Run
 
@@ -14,9 +14,9 @@ Open http://localhost:4175. `npm run check` checks the JavaScript syntax.
 
 ## Edit and deploy
 
-The deployable website is in `dist/`: `index.html`, `style.css`, `app.js`, and `favicon.svg`. The directory is tracked because the project is buildless. Any static host can serve it. `.openai/hosting.json` identifies the separate Sites project.
+The deployable website is in `dist/`: `index.html`, `style.css`, `app.js`, `favicon.svg`, and `assets/`. The directory is tracked because the project is buildless. Any static host can serve it. `.openai/hosting.json` identifies the separate Sites project.
 
-The three platform tabs support mouse and keyboard interaction. All product counts are explicitly illustrative; no customer logos, certifications, testimonials or performance claims are invented. The contact action opens an email draft addressed to support@safora.ai; it does not send an email automatically. Google Fonts are optional; system fonts are the fallback. Reduced-motion preferences are respected.
+The interactive product preview has Overview, Cloud Security and Control Validation views. Tabs support mouse and keyboard interaction, adapting arrow-key directions to the layout. Mobile navigation supports Escape and closes after navigation; FAQs use native disclosure controls. All product counts are explicitly illustrative. Contact actions open an email draft addressed to support@safora.ai. Google Fonts are optional; system fonts are the fallback. Reduced-motion preferences are respected.
 
 ## Custom domain
 
@@ -24,4 +24,4 @@ The intended company domain is safora.ai. Deployment to Sites does not configure
 
 ## Validation
 
-JavaScript syntax and local HTTP asset checks are available without browser tooling. Visual and keyboard verification should cover desktop, tablet and mobile before public launch.
+`npm run check` verifies JavaScript syntax. `scripts/verify.mjs` is an optional workspace verification helper using the existing Playwright installation in `D:/safora-dashboard/e2e` (no website dependencies are needed). With the local server running, `node scripts/verify.mjs` checks all three views at six viewport widths, document overflow, broken images, runtime errors, keyboard tabs, mobile navigation, FAQ disclosure and contact targets. Screenshots and the report are written to ignored `artifacts/`.
