@@ -45,7 +45,7 @@ export function createIcon(name) {
   svg.setAttribute('aria-hidden', 'true');
   svg.setAttribute('focusable', 'false');
   const use = document.createElementNS('http://www.w3.org/2000/svg', 'use');
-  use.setAttribute('href', `/assets/icons.svg#${name}`);
+  use.setAttribute('href', new URL(`../assets/icons.svg#${name}`, import.meta.url).href);
   svg.append(use);
   return svg;
 }

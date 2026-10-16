@@ -21,6 +21,8 @@ test('static server handles assets, HEAD, malformed requests and path escapes', 
   await mkdir(root);
   await writeFile(path.join(root, 'index.html'), '<h1>SAFORA</h1>');
   await writeFile(path.join(root, 'logo.jpeg'), 'sample-image');
+  await mkdir(path.join(root, 'safora'));
+  await writeFile(path.join(root, 'safora', 'index.html'), '<h1>Project page</h1>');
   await writeFile(path.join(workspace, 'outside.txt'), 'must-not-be-served');
   const server = createStaticServer(root);
   await new Promise((resolve) => server.listen(0, '127.0.0.1', resolve));
@@ -37,6 +39,9 @@ test('static server handles assets, HEAD, malformed requests and path escapes', 
   assert.match(home.headers.get('content-type'), /text\/html/);
   assert.equal(home.headers.get('x-content-type-options'), 'nosniff');
   assert.equal(await home.text(), '<h1>SAFORA</h1>');
+  const projectPage = await fetch(`${origin}/safora/`);
+  assert.equal(projectPage.status, 200);
+  assert.equal(await projectPage.text(), '<h1>Project page</h1>');
   const image = await fetch(`${origin}/logo.jpeg`, { method: 'HEAD' });
   assert.equal(image.headers.get('content-type'), 'image/jpeg');
   assert.equal(await image.text(), '');

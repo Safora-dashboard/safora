@@ -78,7 +78,11 @@ There is no build step: the tracked `dist/` directory is the deployable website.
 
 ## Deployment and domain
 
-The site is published through Sites. Reuse the `project_id` in `.openai/hosting.json`; keep GitHub and the Sites source repository synchronized to the same commit when publishing.
+GitHub Pages deployment is defined in `.github/workflows/pages.yml`. It validates the site, runs browser tests and publishes only `dist/` through GitHub Actions on pushes to `main` or manual dispatch. Pages must be enabled with **GitHub Actions** as its source in the repository settings. Repository visibility and the account's GitHub plan determine Pages availability.
+
+All asset references are relative, including the shared SVG sprite, so the same files work at a project URL such as `https://safora-dashboard.github.io/safora/`, at a custom-domain root, and locally.
+
+The existing Sites deployment remains available. Reuse the `project_id` in `.openai/hosting.json` when explicitly publishing through Sites; keep its source synchronized to the matching published commit.
 
 `safora.ai` has been registered as a custom hostname for this Sites project. Activation depends on the DNS and validation records returned by Sites being applied in Cloudflare. Registration alone does not change DNS or make a private Site public. Verify domain and HTTPS status before treating the custom hostname as active. No domain credentials are stored in this repository.
 

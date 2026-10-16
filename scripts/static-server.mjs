@@ -33,7 +33,8 @@ export function createStaticServer(directory) {
     try {
       const root = await rootDirectory;
       const pathname = decodeURIComponent(new URL(request.url ?? '/', 'http://localhost').pathname);
-      const filename = path.resolve(root, `.${pathname === '/' ? '/index.html' : pathname}`);
+      const requestedFile = pathname.endsWith('/') ? `${pathname}index.html` : pathname;
+      const filename = path.resolve(root, `.${requestedFile}`);
       const resolved = await realpath(filename);
       const relative = path.relative(root, resolved);
       if (relative.startsWith('..') || path.isAbsolute(relative)) {

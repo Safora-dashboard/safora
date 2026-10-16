@@ -43,4 +43,6 @@ Run checks appropriate to the change. Browser tests cover the three preview view
 
 ## Publishing
 
-Reuse the Sites project ID in `.openai/hosting.json`. Keep the Sites source and GitHub `main` synchronized to the published commit. Preserve the existing Site audience. Domain registration does not configure DNS or make a private Site public.
+GitHub Pages is configured by `.github/workflows/pages.yml`, which publishes `dist/` after checks. Use GitHub Actions as the Pages source. Keep asset references relative so the site works under the repository's project path as well as at a domain root. Never change repository visibility to enable Pages without the user's explicit authorization.
+
+When publishing through Sites, reuse its project ID in `.openai/hosting.json` and keep its source synchronized to the matching published commit. Preserve the existing Site audience. Domain registration does not configure DNS or make a private Site public.

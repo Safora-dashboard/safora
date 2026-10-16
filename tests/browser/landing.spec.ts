@@ -15,7 +15,7 @@ for (const width of [320, 390, 640, 768, 1024, 1440, 1920]) {
     page.on('response', (response) => {
       if (response.status() >= 400) errors.push(`${response.status()} ${response.url()}`);
     });
-    await page.goto('/');
+    await page.goto('./');
 
     for (const view of views) {
       await page.getByRole('tab', { name: view.tab }).click();
@@ -37,7 +37,7 @@ for (const width of [320, 390, 640, 768, 1024, 1440, 1920]) {
 }
 
 test('tabs work with arrows, Home and End', async ({ page }) => {
-  await page.goto('/');
+  await page.goto('./');
   const first = page.getByRole('tab', { name: views[0].tab });
   await first.focus();
   await page.keyboard.press('ArrowRight');
@@ -51,7 +51,7 @@ test('tabs work with arrows, Home and End', async ({ page }) => {
 });
 
 test('finding details contain evidence, trap focus and restore the trigger', async ({ page }) => {
-  await page.goto('/');
+  await page.goto('./');
   const trigger = page.locator('.finding-row').first();
   await trigger.click();
   const dialog = page.getByRole('dialog');
@@ -71,7 +71,7 @@ test('finding details contain evidence, trap focus and restore the trigger', asy
 });
 
 test('cloud and control findings retain their own investigation details', async ({ page }) => {
-  await page.goto('/');
+  await page.goto('./');
   for (const view of views.slice(1)) {
     await page.getByRole('tab', { name: view.tab }).click();
     for (const row of await page.locator('.finding-row').all()) {
@@ -86,7 +86,7 @@ test('cloud and control findings retain their own investigation details', async 
 
 test('mobile navigation opens, closes, restores focus and follows links', async ({ page }) => {
   await page.setViewportSize({ width: 390, height: 844 });
-  await page.goto('/');
+  await page.goto('./');
   await page.getByRole('button', { name: 'Open navigation' }).click();
   await expect(page.getByRole('navigation', { name: 'Main navigation' })).toBeVisible();
   await page.keyboard.press('Escape');
@@ -101,7 +101,7 @@ test('mobile navigation opens, closes, restores focus and follows links', async 
 });
 
 test('context links select the intended product view', async ({ page }) => {
-  await page.goto('/');
+  await page.goto('./');
   await page.getByRole('link', { name: 'Explore validation' }).click();
   await expect(page.getByRole('tab', { name: 'Validate your controls' })).toHaveAttribute(
     'aria-selected',
@@ -111,7 +111,7 @@ test('context links select the intended product view', async ({ page }) => {
 });
 
 test('hero investigation opens evidence and restores the originating link', async ({ page }) => {
-  await page.goto('/');
+  await page.goto('./');
   const trigger = page.getByRole('link', { name: 'Inspect example' });
   await trigger.click();
   const dialog = page.getByRole('dialog');
@@ -124,7 +124,7 @@ test('hero investigation opens evidence and restores the originating link', asyn
 });
 
 test('FAQ disclosures and demo contact links work', async ({ page }) => {
-  await page.goto('/');
+  await page.goto('./');
   await page.locator('summary').filter({ hasText: 'How can we see the platform in action?' }).click();
   await expect(page.locator('.faq-list details').last()).toHaveAttribute('open', '');
   const links = await page
@@ -137,7 +137,7 @@ test('FAQ disclosures and demo contact links work', async ({ page }) => {
 test('essential content and demo contact work without JavaScript', async ({ browser }) => {
   const context = await browser.newContext({ javaScriptEnabled: false });
   const page = await context.newPage();
-  await page.goto('/');
+  await page.goto('./');
   await expect(page.getByRole('heading', { level: 1 })).toBeVisible();
   await expect(page.getByRole('link', { name: 'Get a demo' }).first()).toHaveAttribute(
     'href',
@@ -150,7 +150,7 @@ test('essential content and demo contact work without JavaScript', async ({ brow
 for (const width of [390, 1440]) {
   test(`accessibility at ${width}px, including an open finding`, async ({ page }) => {
     await page.setViewportSize({ width, height: 1000 });
-    await page.goto('/');
+    await page.goto('./');
     const scan = () => new AxeBuilder({ page }).withTags(['wcag2a', 'wcag2aa', 'wcag21aa']).analyze();
     expect(
       (await scan()).violations.map((item) => ({
