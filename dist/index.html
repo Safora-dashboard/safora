@@ -3,20 +3,19 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>SAFORA | See the bigger security picture</title>
+    <title>SAFORA | Exposure, posture and risk. In context.</title>
     <meta
       name="description"
       content="Connect exposure, identity, cloud security and control validation in one command center. Explore SAFORA and see the context behind cyber risk."
     />
     <meta name="theme-color" content="#ffffff" />
-    <meta property="og:title" content="SAFORA | See the bigger security picture" />
+    <meta property="og:title" content="SAFORA | Exposure, posture and risk. In context." />
     <meta
       property="og:description"
-      content="Security has a bigger picture. Bring it into focus with SAFORA."
+      content="See your exposure. Focus your defense. One command center for exposure, identity, cloud and control validation."
     />
     <meta property="og:type" content="website" />
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
-    <link rel="preload" href="/assets/security-context.svg" as="image" type="image/svg+xml" />
     <link rel="stylesheet" href="/style.css" />
     <script type="module" src="/app.js"></script>
   </head>
@@ -51,99 +50,103 @@
     </header>
 
     <main id="main">
-      <section class="hero" aria-labelledby="hero-title">
-        <div class="container hero-grid">
-          <div class="hero-copy">
-            <p class="eyebrow"><span class="label-line"></span> THE CYBER SECURITY COMMAND CENTER</p>
-            <h1 id="hero-title">Security has a<br /><span>bigger picture.</span><br />See it clearly.</h1>
-            <p class="hero-description">
-              Exposure. Identity. Cloud. Controls.<br />Bring the signals together. Understand what they mean.
-              Give your next security decision a clearer starting point.
-            </p>
-            <div class="button-row">
-              <a class="button button-primary" href="mailto:support@safora.ai?subject=SAFORA%20demo%20request"
-                >Get a demo <span aria-hidden="true">&#8599;</span></a
-              >
-              <a class="button button-quiet" href="#platform"
-                >Explore the platform <span aria-hidden="true">&#8595;</span></a
-              >
+      <section class="masthead" aria-labelledby="hero-title">
+        <div class="masthead-grid" aria-hidden="true"></div>
+        <div class="container masthead-inner">
+          <p class="eyebrow masthead-eyebrow"><span></span> THE CYBER SECURITY COMMAND CENTER</p>
+          <h1 id="hero-title">See your exposure.<br /><span>Focus your defense.</span></h1>
+          <p class="masthead-description">
+            Bring cloud, identity, exposure and control validation into one security command center. Move from
+            fragmented findings to the evidence behind your next decision.
+          </p>
+          <div class="button-row masthead-actions">
+            <a class="button button-primary" href="mailto:support@safora.ai?subject=SAFORA%20demo%20request"
+              >Get a demo <span aria-hidden="true">&#8599;</span></a
+            >
+            <a class="button masthead-secondary" href="#platform"
+              >Explore the platform <span aria-hidden="true">&#8595;</span></a
+            >
+          </div>
+          <div
+            class="signal-console"
+            aria-label="Illustrative investigation connecting exposure, identity and control evidence"
+          >
+            <div class="console-heading">
+              <div>
+                <span class="console-emblem" aria-hidden="true">S</span
+                ><span>THE CONNECTED SECURITY PICTURE</span>
+              </div>
+              <span class="console-demo">ILLUSTRATIVE SCENARIO</span>
             </div>
-            <p class="hero-footnote">One command center. Context across your environment.</p>
-          </div>
-          <figure class="hero-visual">
-            <img
-              src="/assets/security-context.svg"
-              width="740"
-              height="660"
-              alt="An original illustration connecting exposure, identity and control validation around a shared security core."
-              fetchpriority="high"
-            />
-            <figcaption>
-              <span class="status-dot"></span> DIFFERENT SIGNALS. A CONNECTED PERSPECTIVE.
-            </figcaption>
-          </figure>
-        </div>
-        <div class="container coverage-bar" aria-label="Security domains">
-          <p>YOUR ENVIRONMENT.<br /><strong>ONE SHARED PERSPECTIVE.</strong></p>
-          <div><img src="/assets/module-icons/cloud-security.svg" width="32" height="32" alt="" />Cloud</div>
-          <div>
-            <img src="/assets/module-icons/identity-access.svg" width="32" height="32" alt="" />Identity
-          </div>
-          <div>
-            <img src="/assets/module-icons/agent-health.svg" width="32" height="32" alt="" />Endpoints
-          </div>
-          <div>
-            <img
-              src="/assets/module-icons/infrastructure-network.svg"
-              width="32"
-              height="32"
-              alt=""
-            />Infrastructure
-          </div>
-          <div>
-            <img src="/assets/module-icons/devsecops.svg" width="32" height="32" alt="" />Supply chain
+            <div class="signal-flow">
+              <div class="signal-stage">
+                <div class="signal-stage-label"><span>01</span> EXPOSURE</div>
+                <div class="signal-asset">
+                  <img src="/assets/module-icons/exposure-graph.svg" width="37" height="37" alt="" />
+                  <div>
+                    <h2>Exposed workload</h2>
+                    <p>Public-facing resource</p>
+                  </div>
+                </div>
+                <span class="signal-context">Where could access begin?</span>
+              </div>
+              <div class="signal-stage">
+                <div class="signal-stage-label"><span>02</span> IDENTITY</div>
+                <div class="signal-asset">
+                  <img src="/assets/module-icons/identity-access.svg" width="37" height="37" alt="" />
+                  <div>
+                    <h2>Privileged access</h2>
+                    <p>Related identity context</p>
+                  </div>
+                </div>
+                <span class="signal-context">What access is associated?</span>
+              </div>
+              <div class="signal-stage">
+                <div class="signal-stage-label"><span>03</span> VALIDATION</div>
+                <div class="signal-asset">
+                  <img src="/assets/module-icons/control-validation.svg" width="37" height="37" alt="" />
+                  <div>
+                    <h2>Control evidence</h2>
+                    <p>Evaluated security checks</p>
+                  </div>
+                </div>
+                <span class="signal-context">What does the assessment show?</span>
+              </div>
+            </div>
+            <div class="signal-insight">
+              <div>
+                <span class="console-severity">PRIORITY INVESTIGATION</span>
+                <h3>Exposed workload with privileged access</h3>
+                <p>Follow the finding. Review the context. Examine the evidence.</p>
+              </div>
+              <a class="console-inspect" href="#platform" data-open-example aria-haspopup="dialog">
+                Inspect example <span aria-hidden="true">&#8599;</span>
+              </a>
+            </div>
+            <p class="console-disclaimer">Demo data. No production resources are connected.</p>
           </div>
         </div>
       </section>
-
-      <section class="section container introduction" aria-labelledby="intro-title">
-        <div class="section-heading centered">
-          <p class="eyebrow">FROM FRAGMENTED FINDINGS TO INFORMED DECISIONS</p>
-          <h2 id="intro-title">
-            More visibility is a start.<br /><span class="text-purple">Context takes you further.</span>
-          </h2>
-          <p>
-            Security tools show you different parts of the environment. SAFORA brings those perspectives into
-            a consistent workspace, from the executive overview to the evidence behind a finding.
-          </p>
-        </div>
-        <div class="outcome-grid">
-          <article class="outcome">
-            <span class="outcome-number">01 / UNDERSTAND</span>
-            <h3>See what is exposed.</h3>
-            <p>
-              Review attack paths, cloud posture and identity risks in the context of the assets involved.
-            </p>
+      <section class="platform-value" aria-label="Platform scope">
+        <div class="container platform-value-grid">
+          <div>
+            <strong>17</strong>
+            <p>Security modules.<br /><span>One consistent workspace.</span></p>
+          </div>
+          <div>
+            <strong>Cloud. Identity. Controls.</strong>
+            <p>Explore the relationships<br /><span>behind a security finding.</span></p>
             <a class="text-link" href="#platform" data-preview-link="overview"
               >Explore exposure <span aria-hidden="true">&#8594;</span></a
             >
-          </article>
-          <article class="outcome">
-            <span class="outcome-number">02 / VALIDATE</span>
-            <h3>Examine your defenses.</h3>
-            <p>Look into control assessments, failed checks and coverage gaps with supporting evidence.</p>
+          </div>
+          <div>
+            <strong>From overview to evidence.</strong>
+            <p>A shared perspective<br /><span>for analysts and leadership.</span></p>
             <a class="text-link" href="#platform" data-preview-link="controls"
               >Explore validation <span aria-hidden="true">&#8594;</span></a
             >
-          </article>
-          <article class="outcome">
-            <span class="outcome-number">03 / ALIGN</span>
-            <h3>Give risk a shared language.</h3>
-            <p>Connect the details security teams investigate to the broader picture leadership needs.</p>
-            <a class="text-link" href="#teams"
-              >Find your perspective <span aria-hidden="true">&#8594;</span></a
-            >
-          </article>
+          </div>
         </div>
       </section>
 
@@ -152,7 +155,7 @@
           <div class="section-heading platform-heading">
             <div>
               <p class="eyebrow">MEET YOUR COMMAND CENTER</p>
-              <h2 id="platform-title">The big picture.<br />The details that matter.</h2>
+              <h2 id="platform-title">Your environment.<br />In focus. In context.</h2>
             </div>
             <p>
               Get a feel for the SAFORA experience.<br />Choose a view. Inspect a finding. Follow the context.
@@ -416,7 +419,7 @@
       <section class="section container teams-section" id="teams" aria-labelledby="teams-title">
         <div class="section-heading centered">
           <p class="eyebrow">DIFFERENT ROLES. SHARED CONTEXT.</p>
-          <h2 id="teams-title">Your perspective.<br />A common security picture.</h2>
+          <h2 id="teams-title">One platform.<br />Every security conversation.</h2>
           <p>
             From the analyst following a finding to the leader asking about organizational risk, make room for
             both the detail and the decision.
@@ -533,6 +536,54 @@
         </div>
       </section>
 
+      <section class="section governance-section" id="governance" aria-labelledby="governance-title">
+        <div class="container">
+          <div class="section-heading governance-heading">
+            <div>
+              <p class="eyebrow">A WORKSPACE WITH ACCOUNTABILITY</p>
+              <h2 id="governance-title">Clear boundaries.<br />Traceable decisions.</h2>
+            </div>
+            <p>
+              A shared security picture needs clear responsibilities. SAFORA keeps workspace context,
+              permissions and activity visible within the platform.
+            </p>
+          </div>
+          <div class="governance-grid">
+            <article>
+              <svg viewBox="0 0 32 32" aria-hidden="true">
+                <path d="M5 12h22v15H5zM10 12V8a6 6 0 0 1 12 0v4M16 18v4" /></svg
+              ><span>01 / WORKSPACES</span>
+              <h3>Keep organizational<br />context separate.</h3>
+              <p>
+                Tenant-scoped views and workspace memberships keep investigations within the active
+                organization.
+              </p>
+            </article>
+            <article>
+              <svg viewBox="0 0 32 32" aria-hidden="true">
+                <circle cx="13" cy="10" r="5" />
+                <path d="M3 28v-5c0-9 20-9 20 0v5m0-17 3 3 5-6" /></svg
+              ><span>02 / PERMISSIONS</span>
+              <h3>Make responsibilities<br />explicit.</h3>
+              <p>
+                Admin, editor and viewer memberships distinguish who can investigate from who can change
+                platform data.
+              </p>
+            </article>
+            <article>
+              <svg viewBox="0 0 32 32" aria-hidden="true">
+                <path d="M7 3h16v26H7zM11 10h10m-10 6h10m-10 6h6" /></svg
+              ><span>03 / AUDIT HISTORY</span>
+              <h3>Retain the context<br />of a change.</h3>
+              <p>
+                Audited mutations and finding history provide a record of activity alongside the
+                investigation.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
       <section class="section container faq-layout" id="questions" aria-labelledby="questions-title">
         <div>
           <p class="eyebrow">GOOD QUESTIONS. CLEAR ANSWERS.</p>
@@ -580,7 +631,7 @@
         <div class="container contact-inner">
           <div>
             <p class="eyebrow">YOUR NEXT PERSPECTIVE STARTS HERE</p>
-            <h2 id="contact-title">See the bigger picture.<br />Start with SAFORA.</h2>
+            <h2 id="contact-title">Make the next security<br />conversation a clearer one.</h2>
             <p>Explore the platform with our team. Bring your questions.</p>
             <div class="button-row">
               <a class="button button-white" href="mailto:support@safora.ai?subject=SAFORA%20demo%20request"

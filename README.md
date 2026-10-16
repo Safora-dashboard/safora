@@ -2,7 +2,9 @@
 
 A standalone landing page for the SAFORA Cyber Security Command Center, maintained in [Safora-dashboard/safora](https://github.com/Safora-dashboard/safora).
 
-The design follows the dashboard's original logo, module icons, navy typography, purple accents and 12px cards. A custom SVG illustration, product explorer and investigation story give the marketing page its own composition. The Wiz homepage informed the narrative structure; its copy, customer claims, artwork and assets are not used.
+The design follows the dashboard's original logo, module icons, navy typography, purple accents and 12px cards. A navy-and-purple opening, responsive investigation diagram and interactive product explorer give the marketing page its own composition. The hero's "Inspect example" action opens evidence in the same accessible panel as the product explorer; without JavaScript, it links to the platform section.
+
+Design research included [Wiz](https://www.wiz.io/), [Orca](https://orca.security/), [SentinelOne](https://www.sentinelone.com/) and [ArmorCode](https://www.armorcode.com/). The latest pass emphasizes a direct value proposition, early product presentation, readable product details and concrete information about workspace isolation, permissions and audit history. Competitor copy, customer claims, artwork and assets are not used.
 
 ## Run locally
 
@@ -41,8 +43,9 @@ dist/
   style.css                  Explicit stylesheet import order
   styles/
     base.css                 Tokens, typography, navigation and shared elements
-    sections.css             Marketing sections and responsive composition
+    sections.css             Marketing sections, governance and responsive composition
     product.css              Product explorer and finding detail panel
+    masthead.css             Opening, investigation diagram and platform scope strip
   modules/
     dom.js                   Typed DOM creation and page-contract helpers
     navigation.js            Mobile disclosure navigation
@@ -50,7 +53,7 @@ dist/
     preview-data.js          Typed illustrative product records
     product-preview.js       Safe DOM rendering for the product explorer
     finding-dialog.js        Evidence panel and focus behavior
-  assets/                    SAFORA brand assets and original SVG illustration
+  assets/                    Original SAFORA brand assets
 scripts/
   serve.mjs                  Preview server entry point
   static-server.mjs          Testable static HTTP server

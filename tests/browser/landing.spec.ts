@@ -110,6 +110,19 @@ test('context links select the intended product view', async ({ page }) => {
   await expect(page.getByRole('heading', { name: 'Security control validation', exact: true })).toBeVisible();
 });
 
+test('hero investigation opens evidence and restores the originating link', async ({ page }) => {
+  await page.goto('/');
+  const trigger = page.getByRole('link', { name: 'Inspect example' });
+  await trigger.click();
+  const dialog = page.getByRole('dialog');
+  await expect(dialog).toBeVisible();
+  await expect(dialog.locator('#dialog-resource')).toHaveText('demo-web-01');
+  await expect(dialog.locator('.evidence-list li')).toHaveCount(3);
+  await page.keyboard.press('Escape');
+  await expect(dialog).not.toBeVisible();
+  await expect(trigger).toBeFocused();
+});
+
 test('FAQ disclosures and demo contact links work', async ({ page }) => {
   await page.goto('/');
   await page.locator('summary').filter({ hasText: 'How can we see the platform in action?' }).click();

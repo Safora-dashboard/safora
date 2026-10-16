@@ -78,4 +78,13 @@ export function initializeProductPreview() {
     if (link instanceof HTMLElement)
       link.addEventListener('click', () => tabs.select(link.dataset.previewLink));
   }
+
+  for (const button of document.querySelectorAll('[data-open-example]')) {
+    if (button instanceof HTMLElement) {
+      button.addEventListener('click', (event) => {
+        event.preventDefault();
+        dialog.open(previews.overview.findings[0], button);
+      });
+    }
+  }
 }
