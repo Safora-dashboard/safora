@@ -2,3 +2,5 @@
 node_modules/
 .openai/*.local.*
 artifacts/
+playwright-report/
+test-results/

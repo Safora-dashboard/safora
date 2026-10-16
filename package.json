@@ -1,1 +1,25 @@
-{"name":"safora-landing","version":"1.0.0","private":true,"type":"module","scripts":{"dev":"node scripts/serve.mjs","start":"node scripts/serve.mjs","check":"node --check dist/app.js"}}
+{
+  "name": "safora-landing",
+  "version": "2.0.0",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "dev": "node scripts/serve.mjs",
+    "start": "node scripts/serve.mjs",
+    "check": "tsc -p jsconfig.json && node scripts/check-site.mjs",
+    "test": "node --test tests/server.test.mjs",
+    "test:e2e": "playwright test",
+    "format": "prettier --write dist scripts tests .github *.json *.ts *.md",
+    "format:check": "prettier --check dist scripts tests .github *.json *.ts *.md"
+  },
+  "devDependencies": {
+    "@axe-core/playwright": "4.10.2",
+    "@playwright/test": "1.59.1",
+    "@types/node": "20.17.10",
+    "prettier": "3.6.2",
+    "typescript": "5.6.3"
+  }
+}
