@@ -178,7 +178,7 @@
   background: #ffffff06;
 }
 
-.signal-asset img {
+.signal-asset .icon {
   object-fit: contain;
   flex-shrink: 0;
   filter: drop-shadow(0 0 10px #bc8df216);
@@ -368,7 +368,7 @@
     font-size: 8px;
   }
 
-  .signal-asset img {
+  .signal-asset .icon {
     width: 31px;
     height: 31px;
   }
@@ -545,7 +545,7 @@
     font-size: 8px;
   }
 
-  .signal-asset img {
+  .signal-asset .icon {
     height: 27px;
     width: 27px;
   }

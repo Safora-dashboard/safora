@@ -1,0 +1,101 @@
+/* All icons share the same optical grid and stroke. Color belongs to the UI. */
+.icon {
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  flex-shrink: 0;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.75;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  vertical-align: middle;
+}
+
+:is(.button, .text-link, .console-inspect) > span {
+  display: inline-flex;
+  align-items: center;
+}
+
+:is(.button, .text-link, .console-inspect, .footer-bottom, .card-note, .tab-arrow, .map-conclusion) .icon {
+  width: 18px;
+  height: 18px;
+}
+
+.sidebar-item .icon {
+  width: 18px;
+  height: 18px;
+}
+.sidebar-bottom > .icon {
+  width: 27px;
+  height: 27px;
+  color: var(--purple-dark);
+}
+.signal-asset > .icon {
+  color: #d6c2ef;
+}
+.product-tabs > button > .icon {
+  color: var(--purple-dark);
+}
+.metric-heading > .icon {
+  color: var(--purple-dark);
+  padding: 6px;
+  background: var(--purple-soft);
+  border-radius: 8px;
+}
+.node-icon:is(.peach, .blue, .mint) {
+  background: #f3eff8;
+  color: var(--purple-dark);
+}
+.node-icon > .icon {
+  width: 24px;
+  height: 24px;
+}
+.team-icon > .icon {
+  width: 29px;
+  height: 29px;
+  color: var(--purple-dark);
+}
+.governance-grid .icon {
+  stroke-width: 1.75;
+}
+.contact-symbol > .icon {
+  width: 108px;
+  height: 108px;
+  color: #eee3fc;
+  stroke-width: 1.3;
+}
+.finding-row > .finding-arrow {
+  width: 12px;
+  height: 12px;
+}
+.icon-button > .icon {
+  width: 17px;
+  height: 17px;
+}
+.faq-list summary .icon {
+  width: 18px;
+  height: 18px;
+}
+
+@media (max-width: 800px) {
+  .contact-symbol > .icon {
+    width: 82px;
+    height: 82px;
+  }
+}
+
+@media (max-width: 640px) {
+  .team-icon > .icon {
+    width: 28px;
+    height: 28px;
+  }
+  .node-icon > .icon {
+    width: 23px;
+    height: 23px;
+  }
+  .finding-row > .finding-arrow {
+    width: 10px;
+    height: 10px;
+  }
+}

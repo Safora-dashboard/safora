@@ -2,9 +2,17 @@ import assert from 'node:assert/strict';
 import { access, readFile, readdir } from 'node:fs/promises';
 import { fileURLToPath } from 'node:url';
 import { previews } from '../dist/modules/preview-data.js';
+import { ICON_NAMES } from '../dist/modules/icons.js';
 
 const root = new URL('../dist/', import.meta.url);
 const html = await readFile(new URL('index.html', root), 'utf8');
+const iconSprite = await readFile(new URL('assets/icons.svg', root), 'utf8');
+const symbolIds = [...iconSprite.matchAll(/<symbol\s+id="([^"]+)"/g)].map((match) => match[1]);
+assert.equal(symbolIds.length, new Set(symbolIds).size, 'Icon symbols must be unique.');
+for (const name of ICON_NAMES) assert.ok(symbolIds.includes(name), `Missing icon symbol: ${name}`);
+for (const match of html.matchAll(/href="\/assets\/icons\.svg#([^"]+)"/g)) {
+  assert.ok(symbolIds.includes(match[1]), `Unknown static icon: ${match[1]}`);
+}
 const ids = [...html.matchAll(/\bid="([^"]+)"/g)].map((match) => match[1]);
 assert.equal(ids.length, new Set(ids).size, 'HTML IDs must be unique.');
 assert.equal((html.match(/<h1\b/g) ?? []).length, 1, 'There must be one main heading.');
@@ -23,7 +31,8 @@ for (const match of html.matchAll(/\b(?:href|src)="([^"]+)"/g)) {
 
 for (const view of Object.values(previews)) {
   assert.ok(view.score >= 0 && view.score <= 100, 'A pass rate must be within 0–100.');
-  for (const metric of view.metrics) await access(new URL(`assets/module-icons/${metric.icon}.svg`, root));
+  for (const metric of view.metrics)
+    assert.ok(symbolIds.includes(metric.icon), `Unknown metric icon: ${metric.icon}`);
 }
 
 /** @param {URL} directory */

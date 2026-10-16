@@ -2,6 +2,7 @@ import { element, requiredElement } from './dom.js';
 import { previews } from './preview-data.js';
 import { Tabs } from './tabs.js';
 import { initializeFindingDialog } from './finding-dialog.js';
+import { createIcon } from './icons.js';
 
 const SVG_NAMESPACE = 'http://www.w3.org/2000/svg';
 const CHART_PATHS = [
@@ -15,11 +16,7 @@ const CHART_PATHS = [
 function renderMetric(metric, index) {
   const card = element('article', 'metric');
   const heading = element('div', 'metric-heading');
-  const icon = element('img', '');
-  icon.src = `/assets/module-icons/${metric.icon}.svg`;
-  icon.alt = '';
-  icon.width = 34;
-  icon.height = 34;
+  const icon = createIcon(metric.icon);
   heading.append(icon, element('h4', '', metric.label));
 
   const chart = document.createElementNS(SVG_NAMESPACE, 'svg');
@@ -57,9 +54,9 @@ export function initializeProductPreview() {
         name,
         element('span', `severity ${finding.severity.toLowerCase()}`, finding.severity),
         element('span', 'finding-area', finding.area),
-        element('span', 'finding-arrow', '\u203a'),
+        createIcon('chevron-right'),
       );
-      row.lastElementChild?.setAttribute('aria-hidden', 'true');
+      row.lastElementChild?.classList.add('finding-arrow');
       row.addEventListener('click', () => dialog.open(finding, row));
       return row;
     });

@@ -1,5 +1,5 @@
 /** @typedef {'Critical' | 'High' | 'Medium'} Severity */
-/** @typedef {{ icon: string, label: string, value: string, note: string, color: string }} Metric */
+/** @typedef {{ icon: import('./icons.js').IconName, label: string, value: string, note: string, color: string }} Metric */
 /** @typedef {{ title: string, severity: Severity, area: string, resource: string, description: string, evidence: string[], guidance: string }} Finding */
 /** @typedef {{ title: string, metrics: Metric[], findings: Finding[], postureLabel: string, score: number }} Preview */
 

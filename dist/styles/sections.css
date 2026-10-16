@@ -492,7 +492,7 @@
   inset: 60px;
 }
 
-.contact-symbol img {
+.contact-symbol .icon {
   filter: drop-shadow(0 15px 30px #2e0e6533);
 }
 
@@ -825,7 +825,7 @@
     inset: 40px;
   }
 
-  .contact-symbol img {
+  .contact-symbol .icon {
     width: 90px;
     height: 90px;
   }
@@ -970,7 +970,7 @@
     width: 39px;
   }
 
-  .node-icon img {
+  .node-icon .icon {
     width: 28px;
     height: 28px;
   }
