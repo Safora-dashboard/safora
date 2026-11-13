@@ -3,16 +3,16 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>SAFORA | Exposure, posture and risk. In context.</title>
+    <title>SAFORA | Follow the path from exposure to risk.</title>
     <meta
       name="description"
       content="Connect exposure, identity, cloud security and control validation in one command center. Explore SAFORA and see the context behind cyber risk."
     />
-    <meta name="theme-color" content="#ffffff" />
-    <meta property="og:title" content="SAFORA | Exposure, posture and risk. In context." />
+    <meta name="theme-color" content="#0b0920" />
+    <meta property="og:title" content="SAFORA | Follow the path from exposure to risk." />
     <meta
       property="og:description"
-      content="See your exposure. Focus your defense. One command center for exposure, identity, cloud and control validation."
+      content="See how findings connect. One command center for exposure, identity, cloud and control validation."
     />
     <meta property="og:type" content="website" />
     <link rel="icon" href="./favicon.svg" type="image/svg+xml" />
@@ -37,8 +37,9 @@
         </button>
         <nav class="main-nav" id="main-nav" aria-label="Main navigation">
           <a href="#platform">Platform</a>
-          <a href="#context">Our perspective</a>
-          <a href="#teams">Built for your team</a>
+          <a href="#approach">How it works</a>
+          <a href="#modules">Modules</a>
+          <a href="#teams">Teams</a>
           <a href="#questions">FAQs</a>
         </nav>
         <a
@@ -55,123 +56,563 @@
     <main id="main">
       <section class="masthead" aria-labelledby="hero-title">
         <div class="masthead-grid" aria-hidden="true"></div>
+        <div class="masthead-glow" aria-hidden="true"></div>
         <div class="container masthead-inner">
-          <p class="eyebrow masthead-eyebrow"><span></span> THE CYBER SECURITY COMMAND CENTER</p>
-          <h1 id="hero-title">See your exposure.<br /><span>Focus your defense.</span></h1>
-          <p class="masthead-description">
-            Bring cloud, identity, exposure and control validation into one security command center. Move from
-            fragmented findings to the evidence behind your next decision.
-          </p>
-          <div class="button-row masthead-actions">
-            <a class="button button-primary" href="mailto:support@safora.ai?subject=SAFORA%20demo%20request"
-              >Get a demo
-              <span aria-hidden="true"
-                ><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-                  <use href="./assets/icons.svg#arrow-up-right"></use></svg></span
-            ></a>
-            <a class="button masthead-secondary" href="#platform"
-              >Explore the platform
-              <span aria-hidden="true"
-                ><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-                  <use href="./assets/icons.svg#arrow-down"></use></svg></span
-            ></a>
+          <div class="masthead-copy">
+            <p class="eyebrow masthead-eyebrow"><span></span> THE CYBER SECURITY COMMAND CENTER</p>
+            <h1 id="hero-title">Follow the path<br /><span>from exposure to risk.</span></h1>
+            <p class="masthead-description">
+              SAFORA connects cloud, identity, exposure and control validation in one command center, so your
+              team can see how findings relate and decide where to look first.
+            </p>
+            <div class="button-row masthead-actions">
+              <a class="button button-primary" href="mailto:support@safora.ai?subject=SAFORA%20demo%20request"
+                >Get a demo
+                <span aria-hidden="true"
+                  ><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                    <use href="./assets/icons.svg#arrow-up-right"></use></svg></span
+              ></a>
+              <a class="button masthead-secondary" href="#platform"
+                >Explore the platform
+                <span aria-hidden="true"
+                  ><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                    <use href="./assets/icons.svg#arrow-down"></use></svg></span
+              ></a>
+            </div>
+            <ul class="masthead-points">
+              <li><strong>17</strong> security modules</li>
+              <li><strong>3</strong> cloud views: Azure, AWS, Microsoft 365</li>
+              <li><strong>1</strong> shared workspace for every team</li>
+            </ul>
           </div>
-          <div
-            class="signal-console"
-            aria-label="Illustrative investigation connecting exposure, identity and control evidence"
-          >
-            <div class="console-heading">
-              <div>
-                <span class="console-emblem" aria-hidden="true">S</span
-                ><span>THE CONNECTED SECURITY PICTURE</span>
-              </div>
-              <span class="console-demo">ILLUSTRATIVE SCENARIO</span>
+
+          <figure class="path-panel">
+            <div class="path-panel-bar">
+              <span><i aria-hidden="true"></i> EXPOSURE PATH</span>
+              <span class="path-panel-tag">ILLUSTRATIVE SCENARIO</span>
             </div>
-            <div class="signal-flow">
-              <div class="signal-stage">
-                <div class="signal-stage-label"><span>01</span> EXPOSURE</div>
-                <div class="signal-asset">
-                  <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-                    <use href="./assets/icons.svg#exposure-graph"></use>
-                  </svg>
-                  <div>
-                    <h2>Exposed workload</h2>
-                    <p>Public-facing resource</p>
-                  </div>
-                </div>
-                <span class="signal-context">Where could access begin?</span>
-              </div>
-              <div class="signal-stage">
-                <div class="signal-stage-label"><span>02</span> IDENTITY</div>
-                <div class="signal-asset">
-                  <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-                    <use href="./assets/icons.svg#identity-access"></use>
-                  </svg>
-                  <div>
-                    <h2>Privileged access</h2>
-                    <p>Related identity context</p>
-                  </div>
-                </div>
-                <span class="signal-context">What access is associated?</span>
-              </div>
-              <div class="signal-stage">
-                <div class="signal-stage-label"><span>03</span> VALIDATION</div>
-                <div class="signal-asset">
-                  <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-                    <use href="./assets/icons.svg#control-validation"></use>
-                  </svg>
-                  <div>
-                    <h2>Control evidence</h2>
-                    <p>Evaluated security checks</p>
-                  </div>
-                </div>
-                <span class="signal-context">What does the assessment show?</span>
-              </div>
-            </div>
-            <div class="signal-insight">
+            <svg
+              class="path-graph"
+              viewBox="0 0 640 480"
+              role="img"
+              aria-label="Illustrative exposure path: an internet-reachable workload leads through a privileged identity to a critical data store, while a second route stops at a validated control."
+            >
+              <defs>
+                <linearGradient
+                  id="path-gradient"
+                  gradientUnits="userSpaceOnUse"
+                  x1="70"
+                  y1="0"
+                  x2="560"
+                  y2="0"
+                >
+                  <stop offset="0" stop-color="#f5b83d" />
+                  <stop offset="0.5" stop-color="#a78bfa" />
+                  <stop offset="1" stop-color="#ff6b8b" />
+                </linearGradient>
+                <radialGradient id="path-halo">
+                  <stop offset="0" stop-color="#8b5cf6" stop-opacity="0.5" />
+                  <stop offset="1" stop-color="#8b5cf6" stop-opacity="0" />
+                </radialGradient>
+              </defs>
+
+              <g class="g-mesh">
+                <path
+                  d="M70 110 160 38 310 36 400 110 505 40 600 100 560 210M70 110 95 290 60 400 180 410 370 350M95 290 230 190M180 410 260 445 520 400 610 440 600 350 560 210M430 250 400 110M430 250 560 210M430 250 370 350M520 400 600 350"
+                />
+                <circle cx="160" cy="38" r="6" />
+                <circle cx="310" cy="36" r="5" />
+                <circle cx="505" cy="40" r="6" />
+                <circle cx="600" cy="100" r="5" />
+                <circle cx="95" cy="290" r="7" />
+                <circle cx="60" cy="400" r="5" />
+                <circle cx="180" cy="410" r="6" />
+                <circle cx="430" cy="250" r="6" />
+                <circle cx="600" cy="350" r="6" />
+                <circle cx="610" cy="440" r="5" />
+                <circle cx="260" cy="445" r="5" />
+              </g>
+
+              <circle class="g-halo" cx="230" cy="190" r="90" fill="url(#path-halo)" />
+              <circle class="g-halo" cx="560" cy="210" r="90" fill="url(#path-halo)" />
+
+              <path class="g-guard" d="M256 205C320 230 350 280 362 322" />
+              <path class="g-blocked" d="M398 350C440 350 470 400 492 400" />
+              <g class="g-main">
+                <path d="M70 110C130 110 170 190 230 190" />
+                <path d="M230 190C290 190 340 110 400 110" />
+                <path d="M400 110C460 110 500 210 560 210" />
+              </g>
+              <g class="g-flow">
+                <path d="M70 110C130 110 170 190 230 190" />
+                <path d="M230 190C290 190 340 110 400 110" />
+                <path d="M400 110C460 110 500 210 560 210" />
+              </g>
+
+              <g class="g-node">
+                <circle class="g-disc" cx="70" cy="110" r="28" />
+                <use
+                  class="g-icon"
+                  href="./assets/icons.svg#external-service"
+                  x="58"
+                  y="98"
+                  width="24"
+                  height="24"
+                />
+                <text class="g-label" x="70" y="162">Internet</text>
+                <text class="g-sub" x="70" y="178">External reachability</text>
+              </g>
+              <g class="g-node g-entry">
+                <circle class="g-pulse" cx="230" cy="190" r="30" />
+                <circle class="g-disc" cx="230" cy="190" r="30" />
+                <use
+                  class="g-icon"
+                  href="./assets/icons.svg#infrastructure-network"
+                  x="218"
+                  y="178"
+                  width="24"
+                  height="24"
+                />
+                <rect class="g-tag" x="186" y="130" width="88" height="20" rx="10" />
+                <text class="g-tag-text" x="230" y="144">ENTRY POINT</text>
+                <text class="g-label" x="230" y="242">Exposed workload</text>
+                <text class="g-sub" x="230" y="258">Public-facing resource</text>
+              </g>
+              <g class="g-node">
+                <circle class="g-disc" cx="400" cy="110" r="28" />
+                <use
+                  class="g-icon"
+                  href="./assets/icons.svg#identity-access"
+                  x="388"
+                  y="98"
+                  width="24"
+                  height="24"
+                />
+                <text class="g-label" x="400" y="162">Privileged identity</text>
+                <text class="g-sub" x="400" y="178">Elevated access</text>
+              </g>
+              <g class="g-node g-critical">
+                <circle class="g-pulse" cx="560" cy="210" r="30" />
+                <circle class="g-disc" cx="560" cy="210" r="30" />
+                <use
+                  class="g-icon"
+                  href="./assets/icons.svg#workspace-lock"
+                  x="548"
+                  y="198"
+                  width="24"
+                  height="24"
+                />
+                <rect class="g-tag" x="508" y="150" width="104" height="20" rx="10" />
+                <text class="g-tag-text" x="560" y="164">CRITICAL ASSET</text>
+                <text class="g-label" x="560" y="262">Critical data store</text>
+                <text class="g-sub" x="560" y="278">What is at stake</text>
+              </g>
+              <g class="g-node g-control">
+                <circle class="g-disc" cx="370" cy="350" r="26" />
+                <use
+                  class="g-icon"
+                  href="./assets/icons.svg#control-validation"
+                  x="358"
+                  y="338"
+                  width="24"
+                  height="24"
+                />
+                <text class="g-label" x="370" y="398">Validated control</text>
+                <text class="g-sub" x="370" y="414">This route stops here</text>
+              </g>
+              <g class="g-node g-dim">
+                <circle class="g-disc" cx="520" cy="400" r="22" />
+                <use
+                  class="g-icon"
+                  href="./assets/icons.svg#overview"
+                  x="510"
+                  y="390"
+                  width="20"
+                  height="20"
+                />
+                <text class="g-sub" x="520" y="444">Internal service</text>
+              </g>
+            </svg>
+            <figcaption class="path-insight">
               <div>
-                <span class="console-severity">PRIORITY INVESTIGATION</span>
-                <h3>Exposed workload with privileged access</h3>
+                <span class="path-severity">PRIORITY INVESTIGATION</span>
+                <p class="path-insight-title">Exposed workload with privileged access</p>
                 <p>Follow the finding. Review the context. Examine the evidence.</p>
               </div>
-              <a class="console-inspect" href="#platform" data-open-example aria-haspopup="dialog">
+              <a class="path-inspect" href="#platform" data-open-example aria-haspopup="dialog">
                 Inspect example
                 <span aria-hidden="true"
                   ><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
                     <use href="./assets/icons.svg#arrow-up-right"></use></svg
                 ></span>
               </a>
-            </div>
-            <p class="console-disclaimer">Demo data. No production resources are connected.</p>
+            </figcaption>
+            <p class="path-disclaimer">Demo data. No production resources are connected.</p>
+          </figure>
+        </div>
+
+        <div class="domain-strip">
+          <div class="container domain-strip-inner">
+            <p>One connected picture across</p>
+            <ul>
+              <li>
+                <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                  <use href="./assets/icons.svg#cloud-security"></use></svg
+                >Cloud
+              </li>
+              <li>
+                <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                  <use href="./assets/icons.svg#identity-access"></use></svg
+                >Identity
+              </li>
+              <li>
+                <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                  <use href="./assets/icons.svg#agent-health"></use></svg
+                >Endpoints
+              </li>
+              <li>
+                <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                  <use href="./assets/icons.svg#infrastructure-network"></use></svg
+                >Infrastructure
+              </li>
+              <li>
+                <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                  <use href="./assets/icons.svg#devsecops"></use></svg
+                >Supply chain
+              </li>
+              <li>
+                <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                  <use href="./assets/icons.svg#ai-exposure"></use></svg
+                >AI exposure
+              </li>
+            </ul>
           </div>
         </div>
       </section>
-      <section class="platform-value" aria-label="Platform scope">
-        <div class="container platform-value-grid">
-          <div>
-            <strong>17</strong>
-            <p>Security modules.<br /><span>One consistent workspace.</span></p>
+
+      <section class="context-section section" id="context" aria-labelledby="context-title">
+        <div class="container">
+          <div class="statement" data-reveal>
+            <p class="eyebrow">CONTEXT CHANGES THE CONVERSATION</p>
+            <h2 id="context-title">
+              An isolated finding is only <span class="text-gradient">part of the story.</span>
+            </h2>
+            <p>
+              An exposed workload matters. The identity that can access it matters too. So does the control
+              expected to protect it. SAFORA puts those perspectives within reach of the same team, so an
+              investigation can start with a better question.
+            </p>
           </div>
-          <div>
-            <strong>Cloud. Identity. Controls.</strong>
-            <p>Explore the relationships<br /><span>behind a security finding.</span></p>
-            <a class="text-link" href="#platform" data-preview-link="overview"
-              >Explore exposure
-              <span aria-hidden="true"
-                ><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-                  <use href="./assets/icons.svg#arrow-right"></use></svg></span
-            ></a>
+
+          <div class="shift" data-reveal>
+            <figure class="shift-card shift-before">
+              <figcaption>
+                <span class="shift-kicker">WITHOUT CONTEXT</span>
+                <strong>A list of findings</strong>
+              </figcaption>
+              <ul class="shift-rows" aria-label="Unrelated example findings">
+                <li><i class="critical"></i><span>Public access on a workload</span><em>Critical</em></li>
+                <li><i class="high"></i><span>Overprivileged role</span><em>High</em></li>
+                <li><i class="critical"></i><span>Failed protection check</span><em>Critical</em></li>
+                <li><i class="medium"></i><span>Agent coverage gap</span><em>Medium</em></li>
+                <li><i class="high"></i><span>Configuration requires review</span><em>High</em></li>
+              </ul>
+              <p class="shift-note">Each one valid. None of them connected.</p>
+            </figure>
+
+            <div class="shift-arrow" aria-hidden="true">
+              <svg class="icon" viewBox="0 0 24 24" focusable="false">
+                <use href="./assets/icons.svg#arrow-right"></use>
+              </svg>
+            </div>
+
+            <figure class="shift-card shift-after">
+              <figcaption>
+                <span class="shift-kicker">WITH CONTEXT</span>
+                <strong>One connected investigation</strong>
+              </figcaption>
+              <ol class="chain">
+                <li>
+                  <span class="chain-icon"
+                    ><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                      <use href="./assets/icons.svg#exposure-graph"></use></svg
+                  ></span>
+                  <div>
+                    <small>THE ENTRY POINT</small>
+                    <strong>An exposed workload</strong>
+                    <p>Which assets are reachable?</p>
+                  </div>
+                </li>
+                <li>
+                  <span class="chain-icon"
+                    ><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                      <use href="./assets/icons.svg#identity-access"></use></svg
+                  ></span>
+                  <div>
+                    <small>THE ACCESS QUESTION</small>
+                    <strong>A privileged identity</strong>
+                    <p>Who can reach the resource?</p>
+                  </div>
+                </li>
+                <li>
+                  <span class="chain-icon"
+                    ><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                      <use href="./assets/icons.svg#control-validation"></use></svg
+                  ></span>
+                  <div>
+                    <small>THE DEFENSE QUESTION</small>
+                    <strong>Control evidence</strong>
+                    <p>What do the evaluated checks show?</p>
+                  </div>
+                </li>
+              </ol>
+              <p class="shift-note">A clearer starting point for the next decision.</p>
+            </figure>
           </div>
-          <div>
-            <strong>From overview to evidence.</strong>
-            <p>A shared perspective<br /><span>for analysts and leadership.</span></p>
-            <a class="text-link" href="#platform" data-preview-link="controls"
-              >Explore validation
-              <span aria-hidden="true"
-                ><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-                  <use href="./assets/icons.svg#arrow-right"></use></svg></span
-            ></a>
+        </div>
+      </section>
+
+      <section class="approach-section section" id="approach" aria-labelledby="approach-title">
+        <div class="container">
+          <div class="section-heading centered" data-reveal>
+            <p class="eyebrow">HOW SAFORA WORKS</p>
+            <h2 id="approach-title">From the big picture<br />to the evidence behind it.</h2>
+            <p>Three perspectives on the same environment, in one consistent workspace.</p>
           </div>
+
+          <article class="feature-row" data-reveal>
+            <div class="feature-copy">
+              <span class="feature-step">01 &middot; SEE</span>
+              <h3>See exposure as a connected picture.</h3>
+              <p>
+                Explore exposed assets alongside the identities and infrastructure around them, and follow how
+                one issue relates to the next.
+              </p>
+              <ul>
+                <li>Adversarial Exposure Graph</li>
+                <li>Exposure Intelligence</li>
+                <li>Identity &amp; access context</li>
+              </ul>
+              <a class="text-link" href="#platform" data-preview-link="overview"
+                >Explore exposure
+                <span aria-hidden="true"
+                  ><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                    <use href="./assets/icons.svg#arrow-right"></use></svg></span
+              ></a>
+            </div>
+            <div class="feature-visual">
+              <div class="fx-card">
+                <div class="fx-bar"><span>EXPOSURE GRAPH</span><span>ILLUSTRATIVE</span></div>
+                <svg
+                  class="converge-graph"
+                  viewBox="0 0 520 350"
+                  role="img"
+                  aria-label="Illustrative graph: three exposed assets lead through one shared privileged identity to two sensitive resources."
+                >
+                  <g class="c-edges">
+                    <path d="M60 62C150 62 170 172 260 172" />
+                    <path d="M60 172H260" />
+                    <path d="M60 282C150 282 170 172 260 172" />
+                    <path d="M260 172C350 172 370 102 456 102" />
+                    <path d="M260 172C350 172 370 242 456 242" />
+                  </g>
+                  <g class="c-flow">
+                    <path d="M60 62C150 62 170 172 260 172" />
+                    <path d="M60 172H260" />
+                    <path d="M60 282C150 282 170 172 260 172" />
+                    <path d="M260 172C350 172 370 102 456 102" />
+                    <path d="M260 172C350 172 370 242 456 242" />
+                  </g>
+                  <g class="c-node">
+                    <circle cx="60" cy="62" r="22" />
+                    <use
+                      class="g-icon"
+                      href="./assets/icons.svg#external-service"
+                      x="50"
+                      y="52"
+                      width="20"
+                      height="20"
+                    />
+                    <text x="60" y="104">Public app</text>
+                  </g>
+                  <g class="c-node">
+                    <circle cx="60" cy="172" r="22" />
+                    <use
+                      class="g-icon"
+                      href="./assets/icons.svg#cloud-security"
+                      x="50"
+                      y="162"
+                      width="20"
+                      height="20"
+                    />
+                    <text x="60" y="214">Cloud workload</text>
+                  </g>
+                  <g class="c-node">
+                    <circle cx="60" cy="282" r="22" />
+                    <use
+                      class="g-icon"
+                      href="./assets/icons.svg#agent-health"
+                      x="50"
+                      y="272"
+                      width="20"
+                      height="20"
+                    />
+                    <text x="60" y="324">Endpoint</text>
+                  </g>
+                  <g class="c-node c-hub">
+                    <circle class="c-ring" cx="260" cy="172" r="46" />
+                    <circle cx="260" cy="172" r="30" />
+                    <use
+                      class="g-icon"
+                      href="./assets/icons.svg#identity-access"
+                      x="248"
+                      y="160"
+                      width="24"
+                      height="24"
+                    />
+                    <rect x="204" y="96" width="112" height="20" rx="10" />
+                    <text class="c-tag" x="260" y="110">PATHS CONVERGE</text>
+                    <text x="260" y="240">Privileged identity</text>
+                  </g>
+                  <g class="c-node c-target">
+                    <circle cx="456" cy="102" r="22" />
+                    <use
+                      class="g-icon"
+                      href="./assets/icons.svg#workspace-lock"
+                      x="446"
+                      y="92"
+                      width="20"
+                      height="20"
+                    />
+                    <text x="456" y="144">Data store</text>
+                  </g>
+                  <g class="c-node c-target">
+                    <circle cx="456" cy="242" r="22" />
+                    <use
+                      class="g-icon"
+                      href="./assets/icons.svg#permissions"
+                      x="446"
+                      y="232"
+                      width="20"
+                      height="20"
+                    />
+                    <text x="456" y="284">Admin console</text>
+                  </g>
+                </svg>
+              </div>
+            </div>
+          </article>
+
+          <article class="feature-row flip" data-reveal>
+            <div class="feature-copy">
+              <span class="feature-step">02 &middot; FOCUS</span>
+              <h3>Focus on context, not just severity.</h3>
+              <p>
+                Review a finding with the things that shape its importance: reachability, associated access
+                and the state of the controls expected to protect it.
+              </p>
+              <ul>
+                <li>Priority findings across domains</li>
+                <li>Azure, AWS &amp; Microsoft 365 views</li>
+                <li>Organizational Risk Index</li>
+              </ul>
+              <a class="text-link" href="#platform" data-preview-link="cloud"
+                >See cloud findings
+                <span aria-hidden="true"
+                  ><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                    <use href="./assets/icons.svg#arrow-right"></use></svg></span
+              ></a>
+            </div>
+            <div class="feature-visual">
+              <div class="fx-card">
+                <div class="fx-bar"><span>PRIORITY FINDINGS</span><span>ILLUSTRATIVE</span></div>
+                <ol class="queue">
+                  <li class="is-first">
+                    <span class="queue-rank">1</span>
+                    <div>
+                      <strong>Exposed workload with privileged access</strong>
+                      <div class="chips">
+                        <span>Internet-facing</span><span>Privileged identity</span><span>Control gap</span>
+                      </div>
+                    </div>
+                    <span class="severity critical">Critical</span>
+                  </li>
+                  <li>
+                    <span class="queue-rank">2</span>
+                    <div>
+                      <strong>Cloud configuration requires review</strong>
+                      <div class="chips"><span>Cloud scope</span><span>Affected assets</span></div>
+                    </div>
+                    <span class="severity high">High</span>
+                  </li>
+                  <li>
+                    <span class="queue-rank">3</span>
+                    <div>
+                      <strong>Endpoint coverage gap identified</strong>
+                      <div class="chips"><span>Agent health</span></div>
+                    </div>
+                    <span class="severity medium">Medium</span>
+                  </li>
+                </ol>
+                <p class="fx-foot">
+                  <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                    <use href="./assets/icons.svg#corner-down-right"></use></svg
+                  >Context sits next to the finding, not in another tool.
+                </p>
+              </div>
+            </div>
+          </article>
+
+          <article class="feature-row" data-reveal>
+            <div class="feature-copy">
+              <span class="feature-step">03 &middot; VALIDATE</span>
+              <h3>Validate the controls you rely on.</h3>
+              <p>
+                Review control assessment results, failed checks and the evidence behind them to understand
+                where attention is needed.
+              </p>
+              <ul>
+                <li>Security Control Validation</li>
+                <li>Agent coverage &amp; health</li>
+                <li>Finding status, comments and history</li>
+              </ul>
+              <a class="text-link" href="#platform" data-preview-link="controls"
+                >Explore validation
+                <span aria-hidden="true"
+                  ><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                    <use href="./assets/icons.svg#arrow-right"></use></svg></span
+              ></a>
+            </div>
+            <div class="feature-visual">
+              <div class="fx-card">
+                <div class="fx-bar"><span>CONTROL VALIDATION</span><span>ILLUSTRATIVE</span></div>
+                <div class="validation">
+                  <div class="mini-ring">
+                    <svg viewBox="0 0 120 120" aria-hidden="true">
+                      <circle class="mini-ring-track" cx="60" cy="60" r="50"></circle>
+                      <circle class="mini-ring-value" cx="60" cy="60" r="50"></circle>
+                    </svg>
+                    <div>
+                      <strong>71.2<span>%</span></strong
+                      ><span>Example pass rate</span>
+                    </div>
+                  </div>
+                  <ul class="control-bars">
+                    <li><span>WAF</span><i style="--pass: 52%"></i><em class="review">Review</em></li>
+                    <li><span>EDR</span><i style="--pass: 64%"></i><em class="review">Review</em></li>
+                    <li><span>DLP</span><i style="--pass: 70%"></i><em class="review">Review</em></li>
+                    <li><span>Email</span><i style="--pass: 88%"></i><em>Passed</em></li>
+                    <li><span>Identity</span><i style="--pass: 92%"></i><em>Passed</em></li>
+                  </ul>
+                </div>
+                <p class="fx-foot">
+                  <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                    <use href="./assets/icons.svg#corner-down-right"></use></svg
+                  >Each result links back to the checks behind it.
+                </p>
+              </div>
+            </div>
+          </article>
         </div>
       </section>
 
@@ -408,94 +849,145 @@
         </div>
       </section>
 
-      <section class="context-section section" id="context" aria-labelledby="context-title">
-        <div class="container context-grid">
-          <div class="context-copy">
-            <p class="eyebrow">CONTEXT CHANGES THE CONVERSATION</p>
-            <h2 id="context-title">An isolated finding<br />is only part<br />of the story.</h2>
-            <p>
-              An exposed workload matters. The identity that can access it matters too. So does the control
-              expected to protect it.
-            </p>
-            <p>
-              SAFORA puts those perspectives within reach of the same team, so an investigation can start with
-              a better question.
-            </p>
-            <a class="text-link light" href="#platform"
-              >Explore the connected perspective
-              <span aria-hidden="true"
-                ><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-                  <use href="./assets/icons.svg#arrow-right"></use></svg></span
-            ></a>
+      <section class="module-section section" id="modules" aria-labelledby="modules-title">
+        <div class="module-glow" aria-hidden="true"></div>
+        <div class="container">
+          <div class="section-heading module-heading" data-reveal>
+            <div>
+              <p class="eyebrow">BREADTH WITHOUT THE DISCONNECT</p>
+              <h2 id="modules-title">17 modules.<br />One familiar workspace.</h2>
+            </div>
+            <div>
+              <p>
+                Consistent views, investigation patterns and evidence across the security domains your team
+                works in.
+              </p>
+              <a
+                class="text-link light"
+                href="mailto:support@safora.ai?subject=SAFORA%20platform%20walkthrough"
+                >Take a guided walkthrough
+                <span aria-hidden="true"
+                  ><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                    <use href="./assets/icons.svg#arrow-right"></use></svg></span
+              ></a>
+            </div>
           </div>
-          <div
-            class="context-map"
-            aria-label="Example investigation: connect an exposed workload, a privileged identity and control evidence."
-          >
-            <p class="map-label"><span></span> AN ILLUSTRATIVE INVESTIGATION</p>
-            <div class="context-node">
-              <span class="node-number">01</span>
-              <div class="node-icon peach">
-                <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-                  <use href="./assets/icons.svg#exposure-graph"></use>
-                </svg>
-              </div>
-              <div>
-                <small>THE ENTRY POINT</small>
-                <h3>An exposed workload</h3>
-                <p>Which assets are reachable?</p>
-              </div>
-              <span class="node-tag">EXPOSURE</span>
-            </div>
-            <div class="context-connector">
-              <span></span>
-              <p>Add identity context</p>
-            </div>
-            <div class="context-node">
-              <span class="node-number">02</span>
-              <div class="node-icon blue">
-                <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-                  <use href="./assets/icons.svg#identity-access"></use>
-                </svg>
-              </div>
-              <div>
-                <small>THE ACCESS QUESTION</small>
-                <h3>A privileged identity</h3>
-                <p>Who can reach the resource?</p>
-              </div>
-              <span class="node-tag">IDENTITY</span>
-            </div>
-            <div class="context-connector">
-              <span></span>
-              <p>Look at the assessment</p>
-            </div>
-            <div class="context-node">
-              <span class="node-number">03</span>
-              <div class="node-icon mint">
-                <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-                  <use href="./assets/icons.svg#control-validation"></use>
-                </svg>
-              </div>
-              <div>
-                <small>THE DEFENSE QUESTION</small>
-                <h3>Control evidence</h3>
-                <p>What do the evaluated checks show?</p>
-              </div>
-              <span class="node-tag">VALIDATION</span>
-            </div>
-            <div class="map-conclusion">
-              <span aria-hidden="true"
-                ><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-                  <use href="./assets/icons.svg#corner-down-right"></use></svg
-              ></span>
-              A clearer starting point for the next decision.
-            </div>
+          <div class="module-groups" data-reveal>
+            <section class="module-group" aria-labelledby="group-intelligence">
+              <header>
+                <h3 id="group-intelligence"><i class="group-dot"></i> Intelligence &amp; exposure</h3>
+                <span class="module-count">6 modules</span>
+              </header>
+              <ul>
+                <li>
+                  <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                    <use href="./assets/icons.svg#active-attack"></use></svg
+                  >Active Attack
+                </li>
+                <li>
+                  <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                    <use href="./assets/icons.svg#attack-pressure"></use></svg
+                  >Attack Pressure
+                </li>
+                <li>
+                  <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                    <use href="./assets/icons.svg#threat-hunting"></use></svg
+                  >Threat Hunting
+                </li>
+                <li>
+                  <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                    <use href="./assets/icons.svg#zero-day"></use></svg
+                  >Zero-Day Intelligence
+                </li>
+                <li>
+                  <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                    <use href="./assets/icons.svg#campaign-simulation"></use></svg
+                  >Campaign Simulation
+                </li>
+                <li>
+                  <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                    <use href="./assets/icons.svg#exposure-graph"></use></svg
+                  >Adversarial Exposure Graph
+                </li>
+              </ul>
+            </section>
+            <section class="module-group" aria-labelledby="group-identity">
+              <header>
+                <h3 id="group-identity"><i class="group-dot gold"></i> Identity, cloud &amp; risk</h3>
+                <span class="module-count">7 modules</span>
+              </header>
+              <ul>
+                <li>
+                  <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                    <use href="./assets/icons.svg#exposure-intelligence"></use></svg
+                  >Exposure Intelligence
+                </li>
+                <li>
+                  <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                    <use href="./assets/icons.svg#identity-access"></use></svg
+                  >Identity &amp; Access
+                </li>
+                <li>
+                  <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                    <use href="./assets/icons.svg#ai-exposure"></use></svg
+                  >AI Exposure &amp; Control
+                </li>
+                <li>
+                  <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                    <use href="./assets/icons.svg#cloud-security"></use></svg
+                  >Azure Security
+                </li>
+                <li>
+                  <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                    <use href="./assets/icons.svg#cloud-security"></use></svg
+                  >AWS Security
+                </li>
+                <li>
+                  <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                    <use href="./assets/icons.svg#cloud-security"></use></svg
+                  >Microsoft 365 Security
+                </li>
+                <li>
+                  <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                    <use href="./assets/icons.svg#crq-financial"></use></svg
+                  >Financial Risk
+                </li>
+              </ul>
+            </section>
+            <section class="module-group" aria-labelledby="group-validation">
+              <header>
+                <h3 id="group-validation"><i class="group-dot green"></i> Validation &amp; foundation</h3>
+                <span class="module-count">4 modules</span>
+              </header>
+              <ul>
+                <li>
+                  <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                    <use href="./assets/icons.svg#control-validation"></use></svg
+                  >Security Control Validation
+                </li>
+                <li>
+                  <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                    <use href="./assets/icons.svg#agent-health"></use></svg
+                  >Agent Coverage &amp; Health
+                </li>
+                <li>
+                  <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                    <use href="./assets/icons.svg#infrastructure-network"></use></svg
+                  >Enterprise Infrastructure
+                </li>
+                <li>
+                  <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                    <use href="./assets/icons.svg#devsecops"></use></svg
+                  >Software Supply Chain
+                </li>
+              </ul>
+            </section>
           </div>
         </div>
       </section>
 
       <section class="section container teams-section" id="teams" aria-labelledby="teams-title">
-        <div class="section-heading centered">
+        <div class="section-heading centered" data-reveal>
           <p class="eyebrow">DIFFERENT ROLES. SHARED CONTEXT.</p>
           <h2 id="teams-title">One platform.<br />Every security conversation.</h2>
           <p>
@@ -503,14 +995,14 @@
             both the detail and the decision.
           </p>
         </div>
-        <div class="team-grid">
+        <div class="team-grid" data-reveal>
           <article>
             <span class="team-icon"
               ><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
                 <use href="./assets/icons.svg#threat-hunting"></use></svg
             ></span>
             <p class="eyebrow">SECURITY OPERATIONS</p>
-            <h3>Go deeper into<br />the investigation.</h3>
+            <h3>Go deeper into the investigation.</h3>
             <p>
               Work through findings, affected assets and evidence. Keep status, comments and history connected
               to the work.
@@ -527,7 +1019,7 @@
                 <use href="./assets/icons.svg#cloud-security"></use></svg
             ></span>
             <p class="eyebrow">CLOUD &amp; IDENTITY TEAMS</p>
-            <h3>Put the environment<br />around the issue.</h3>
+            <h3>Put the environment around the issue.</h3>
             <p>
               Explore cloud security areas and identity risks alongside the resources and access that shape
               them.
@@ -544,7 +1036,7 @@
                 <use href="./assets/icons.svg#crq-financial"></use></svg
             ></span>
             <p class="eyebrow">SECURITY LEADERSHIP</p>
-            <h3>Bring the bigger picture<br />to the conversation.</h3>
+            <h3>Bring the bigger picture to the conversation.</h3>
             <p>
               Review posture and organizational risk with a path back to the findings and assessments behind
               the summary.
@@ -558,71 +1050,9 @@
         </div>
       </section>
 
-      <section class="module-section section" aria-labelledby="modules-title">
-        <div class="container module-layout">
-          <div>
-            <p class="eyebrow">BREADTH WITHOUT THE DISCONNECT</p>
-            <h2 id="modules-title">17 modules.<br />One familiar workspace.</h2>
-            <p>
-              Consistent views, investigation patterns and evidence across the security domains your team
-              works in.
-            </p>
-            <a class="text-link" href="mailto:support@safora.ai?subject=SAFORA%20platform%20walkthrough"
-              >Take a guided walkthrough
-              <span aria-hidden="true"
-                ><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-                  <use href="./assets/icons.svg#arrow-right"></use></svg></span
-            ></a>
-          </div>
-          <div class="module-list">
-            <details open>
-              <summary>
-                <span><i class="group-dot"></i> Intelligence &amp; exposure</span
-                ><span class="module-count">6 modules</span>
-              </summary>
-              <ul>
-                <li>Active Attack</li>
-                <li>Attack Pressure</li>
-                <li>Threat Hunting</li>
-                <li>Zero-Day Intelligence</li>
-                <li>Campaign Simulation</li>
-                <li>Adversarial Exposure Graph</li>
-              </ul>
-            </details>
-            <details>
-              <summary>
-                <span><i class="group-dot blue"></i> Identity, cloud &amp; risk</span
-                ><span class="module-count">7 modules</span>
-              </summary>
-              <ul>
-                <li>Exposure Intelligence</li>
-                <li>Identity &amp; Access</li>
-                <li>AI Exposure &amp; Control</li>
-                <li>Azure Security</li>
-                <li>AWS Security</li>
-                <li>Microsoft 365 Security</li>
-                <li>Financial Risk</li>
-              </ul>
-            </details>
-            <details>
-              <summary>
-                <span><i class="group-dot green"></i> Validation &amp; foundation</span
-                ><span class="module-count">4 modules</span>
-              </summary>
-              <ul>
-                <li>Security Control Validation</li>
-                <li>Agent Coverage &amp; Health</li>
-                <li>Enterprise Infrastructure</li>
-                <li>Software Supply Chain</li>
-              </ul>
-            </details>
-          </div>
-        </div>
-      </section>
-
       <section class="section governance-section" id="governance" aria-labelledby="governance-title">
         <div class="container">
-          <div class="section-heading governance-heading">
+          <div class="section-heading governance-heading" data-reveal>
             <div>
               <p class="eyebrow">A WORKSPACE WITH ACCOUNTABILITY</p>
               <h2 id="governance-title">Clear boundaries.<br />Traceable decisions.</h2>
@@ -632,33 +1062,38 @@
               permissions and activity visible within the platform.
             </p>
           </div>
-          <div class="governance-grid">
+          <div class="governance-grid" data-reveal>
             <article>
-              <svg viewBox="0 0 32 32" aria-hidden="true">
-                <path d="M5 12h22v15H5zM10 12V8a6 6 0 0 1 12 0v4M16 18v4" /></svg
-              ><span>01 / WORKSPACES</span>
-              <h3>Keep organizational<br />context separate.</h3>
+              <span class="governance-icon"
+                ><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                  <use href="./assets/icons.svg#workspace-lock"></use></svg
+              ></span>
+              <span class="governance-step">01 / WORKSPACES</span>
+              <h3>Keep organizational context separate.</h3>
               <p>
                 Tenant-scoped views and workspace memberships keep investigations within the active
                 organization.
               </p>
             </article>
             <article>
-              <svg viewBox="0 0 32 32" aria-hidden="true">
-                <circle cx="13" cy="10" r="5" />
-                <path d="M3 28v-5c0-9 20-9 20 0v5m0-17 3 3 5-6" /></svg
-              ><span>02 / PERMISSIONS</span>
-              <h3>Make responsibilities<br />explicit.</h3>
+              <span class="governance-icon"
+                ><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                  <use href="./assets/icons.svg#permissions"></use></svg
+              ></span>
+              <span class="governance-step">02 / PERMISSIONS</span>
+              <h3>Make responsibilities explicit.</h3>
               <p>
                 Admin, editor and viewer memberships distinguish who can investigate from who can change
                 platform data.
               </p>
             </article>
             <article>
-              <svg viewBox="0 0 32 32" aria-hidden="true">
-                <path d="M7 3h16v26H7zM11 10h10m-10 6h10m-10 6h6" /></svg
-              ><span>03 / AUDIT HISTORY</span>
-              <h3>Retain the context<br />of a change.</h3>
+              <span class="governance-icon"
+                ><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                  <use href="./assets/icons.svg#audit"></use></svg
+              ></span>
+              <span class="governance-step">03 / AUDIT HISTORY</span>
+              <h3>Retain the context of a change.</h3>
               <p>
                 Audited mutations and finding history provide a record of activity alongside the
                 investigation.
@@ -735,25 +1170,39 @@
       </section>
 
       <section class="contact-section" id="contact" aria-labelledby="contact-title">
-        <div class="container contact-inner">
-          <div>
-            <p class="eyebrow">YOUR NEXT PERSPECTIVE STARTS HERE</p>
-            <h2 id="contact-title">Make the next security<br />conversation a clearer one.</h2>
-            <p>Explore the platform with our team. Bring your questions.</p>
-            <div class="button-row">
-              <a class="button button-white" href="mailto:support@safora.ai?subject=SAFORA%20demo%20request"
-                >Get a demo
-                <span aria-hidden="true"
-                  ><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-                    <use href="./assets/icons.svg#arrow-up-right"></use></svg></span></a
-              ><a class="contact-email" href="mailto:support@safora.ai">support@safora.ai</a>
-            </div>
-          </div>
-          <div class="contact-symbol" aria-hidden="true">
-            <span></span><span></span><span></span
-            ><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-              <use href="./assets/icons.svg#control-validation"></use>
+        <div class="container">
+          <div class="contact-inner">
+            <svg class="contact-mesh" viewBox="0 0 600 360" aria-hidden="true" focusable="false">
+              <path
+                class="contact-mesh-lines"
+                d="M40 300 150 210 270 250 380 130 500 170 570 60M150 210 210 90 380 130M270 250 420 300 500 170M210 90 330 30 570 60"
+              />
+              <path class="contact-mesh-path" d="M40 300 150 210 270 250 380 130 500 170 570 60" />
+              <g>
+                <circle cx="40" cy="300" r="6" />
+                <circle cx="150" cy="210" r="8" />
+                <circle cx="270" cy="250" r="6" />
+                <circle cx="380" cy="130" r="9" />
+                <circle cx="500" cy="170" r="6" />
+                <circle cx="570" cy="60" r="10" />
+                <circle cx="210" cy="90" r="5" />
+                <circle cx="420" cy="300" r="5" />
+                <circle cx="330" cy="30" r="5" />
+              </g>
             </svg>
+            <div class="contact-copy">
+              <p class="eyebrow">YOUR NEXT PERSPECTIVE STARTS HERE</p>
+              <h2 id="contact-title">Make the next security conversation a clearer one.</h2>
+              <p>Explore the platform with our team. Bring your questions.</p>
+              <div class="button-row">
+                <a class="button button-white" href="mailto:support@safora.ai?subject=SAFORA%20demo%20request"
+                  >Get a demo
+                  <span aria-hidden="true"
+                    ><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                      <use href="./assets/icons.svg#arrow-up-right"></use></svg></span></a
+                ><a class="contact-email" href="mailto:support@safora.ai">support@safora.ai</a>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -770,8 +1219,8 @@
         <div class="footer-links">
           <div>
             <h2>Explore SAFORA</h2>
-            <a href="#platform">The platform</a><a href="#context">Our perspective</a
-            ><a href="#teams">Built for your team</a>
+            <a href="#platform">The platform</a><a href="#approach">How it works</a
+            ><a href="#modules">All 17 modules</a><a href="#teams">Built for your team</a>
           </div>
           <div>
             <h2>Let's connect</h2>

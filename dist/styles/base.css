@@ -4,6 +4,8 @@
   --purple-dark: #6d28d9;
   --purple-soft: #f4f0fe;
   --navy: #070b3f;
+  --ink: #0b0920;
+  --gold: #f5b83d;
   --body: #60667f;
   --caption: #6c647a;
   --subtle: var(--caption);
@@ -74,8 +76,8 @@ img {
   padding-block: 104px;
 }
 .eyebrow {
-  color: var(--purple);
-  font-size: 11px;
+  color: var(--purple-dark);
+  font-size: 12px;
   font-weight: 650;
   line-height: 1.6;
   letter-spacing: 1.3px;
@@ -87,8 +89,8 @@ h1 {
   letter-spacing: -2.8px;
 }
 h2 {
-  font-size: clamp(32px, 3.3vw, 47px);
-  font-weight: 600;
+  font-size: clamp(32px, 3.5vw, 50px);
+  font-weight: 700;
   line-height: 1.15;
   letter-spacing: -1.7px;
 }
@@ -126,12 +128,12 @@ h3 {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 29px;
-  min-height: 52px;
+  gap: 16px;
+  min-height: 54px;
   border: 1px solid transparent;
-  border-radius: 8px;
+  border-radius: 10px;
   padding: 14px 24px;
-  font-size: 14px;
+  font-size: 15px;
   font-weight: 600;
   line-height: 1.4;
   transition:
@@ -149,7 +151,7 @@ h3 {
 .button-primary {
   color: white;
   background: var(--purple);
-  box-shadow: 0 4px 12px #7c3aed18;
+  box-shadow: 0 8px 20px -8px #7c3aed99;
 }
 .button-primary:hover {
   background: var(--purple-dark);
@@ -179,9 +181,9 @@ h3 {
 .text-link {
   display: inline-flex;
   align-items: center;
-  gap: 22px;
+  gap: 12px;
   color: var(--purple-dark);
-  font-size: 13px;
+  font-size: 14px;
   font-weight: 600;
   line-height: 1.6;
 }
@@ -201,12 +203,12 @@ h3 {
   position: sticky;
   z-index: 30;
   top: 0;
-  background: #fffffff5;
+  background: #ffffffeb;
   border-bottom: 1px solid #efedf4;
   backdrop-filter: blur(16px);
 }
 .header-inner {
-  height: 88px;
+  height: 80px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -228,18 +230,18 @@ h3 {
 }
 .main-nav > a {
   padding-block: 12px;
-  color: #454a67;
-  font-size: 13px;
-  font-weight: 550;
+  color: #2f3354;
+  font-size: 14px;
+  font-weight: 600;
 }
 .main-nav > a:hover {
   color: var(--purple);
 }
 .header-cta {
   min-height: 44px;
-  padding: 10px 19px;
-  font-size: 12px;
-  gap: 23px;
+  padding: 10px 18px;
+  font-size: 13px;
+  gap: 14px;
 }
 .header-cta > span {
   font-size: 17px;
@@ -258,7 +260,7 @@ h3 {
   max-width: 660px;
   margin-top: 23px;
   color: var(--body);
-  font-size: 16px;
+  font-size: 17px;
   line-height: 1.85;
 }
 .section-heading.centered {
@@ -282,8 +284,8 @@ h3 {
 .footer-top > div > p {
   margin-top: 19px;
   color: var(--subtle);
-  font-size: 12px;
-  line-height: 1.9;
+  font-size: 13px;
+  line-height: 1.8;
 }
 .footer-links {
   display: flex;
@@ -297,13 +299,13 @@ h3 {
   gap: 15px;
 }
 .footer-links h2 {
-  font-size: 12px;
+  font-size: 13px;
   letter-spacing: 0;
   margin-bottom: 6px;
 }
 .footer-links a {
   color: var(--body);
-  font-size: 12px;
+  font-size: 13px;
 }
 .footer-links a:hover {
   color: var(--purple);
@@ -315,7 +317,7 @@ h3 {
   padding-block: 25px 30px;
   border-top: 1px solid var(--border);
   color: var(--subtle);
-  font-size: 11px;
+  font-size: 12px;
 }
 .footer-bottom a > span {
   margin-left: 10px;
@@ -332,7 +334,7 @@ h3 {
     gap: 20px;
   }
   .main-nav > a {
-    font-size: 12px;
+    font-size: 13px;
   }
   .brand img {
     width: 132px;
@@ -351,10 +353,10 @@ h3 {
     gap: 20px;
   }
   .main-nav {
-    gap: 15px;
+    gap: 13px;
   }
   .main-nav > a {
-    font-size: 10px;
+    font-size: 12px;
   }
   .brand img {
     width: 119px;
@@ -396,14 +398,14 @@ h3 {
     font-size: 22px;
   }
   .eyebrow {
-    font-size: 9px;
+    font-size: 10.5px;
     letter-spacing: 1px;
   }
   .button {
     padding: 13px 18px;
     min-height: 48px;
-    gap: 22px;
-    font-size: 12px;
+    gap: 14px;
+    font-size: 14px;
   }
   .button-quiet {
     padding-inline: 8px;
@@ -477,8 +479,8 @@ h3 {
     margin-bottom: 34px;
   }
   .section-heading > p:last-child {
-    font-size: 13px;
-    line-height: 1.9;
+    font-size: 15px;
+    line-height: 1.75;
     margin-top: 18px;
   }
   .section-heading .eyebrow + h2 {
@@ -497,10 +499,10 @@ h3 {
     justify-content: space-between;
   }
   .footer-links a {
-    font-size: 11px;
+    font-size: 12px;
   }
   .footer-bottom {
-    font-size: 9px;
+    font-size: 11px;
     gap: 15px;
     padding-block: 22px;
   }
