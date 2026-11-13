@@ -1,15 +1,5 @@
 /* Page sections below the hero, in page order. */
 
-/* Scroll reveal is transform-only so text contrast is never reduced mid-transition. */
-.reveal-ready [data-reveal] {
-  transform: translateY(36px);
-  transition: transform 0.8s cubic-bezier(0.2, 0.7, 0.2, 1);
-}
-
-.reveal-ready [data-reveal].is-revealed {
-  transform: none;
-}
-
 .text-gradient {
   color: var(--purple-dark);
   background: linear-gradient(95deg, #6d28d9, #9f67ff 60%, #d98a00 115%);

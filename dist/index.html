@@ -22,6 +22,7 @@
   <body>
     <a class="skip-link" href="#main">Skip to content</a>
     <header class="site-header">
+      <span class="scroll-progress" aria-hidden="true"></span>
       <div class="container header-inner">
         <a class="brand" href="#" aria-label="SAFORA home">
           <img src="./assets/safora-logo.jpeg" width="148" height="50" alt="SAFORA" />
@@ -80,7 +81,7 @@
               ></a>
             </div>
             <ul class="masthead-points">
-              <li><strong>17</strong> security modules</li>
+              <li><strong data-count="17">17</strong> security modules</li>
               <li><strong>3</strong> cloud views: Azure, AWS, Microsoft 365</li>
               <li><strong>1</strong> shared workspace for every team</li>
             </ul>
@@ -139,15 +140,23 @@
               <path class="g-guard" d="M256 205C320 230 350 280 362 322" />
               <path class="g-blocked" d="M398 350C440 350 470 400 492 400" />
               <g class="g-main">
-                <path d="M70 110C130 110 170 190 230 190" />
-                <path d="M230 190C290 190 340 110 400 110" />
-                <path d="M400 110C460 110 500 210 560 210" />
+                <path pathLength="1" d="M70 110C130 110 170 190 230 190" />
+                <path pathLength="1" d="M230 190C290 190 340 110 400 110" />
+                <path pathLength="1" d="M400 110C460 110 500 210 560 210" />
               </g>
               <g class="g-flow">
                 <path d="M70 110C130 110 170 190 230 190" />
                 <path d="M230 190C290 190 340 110 400 110" />
                 <path d="M400 110C460 110 500 210 560 210" />
               </g>
+              <circle class="g-packet" r="5">
+                <animateMotion
+                  dur="3.6s"
+                  begin="2.4s"
+                  repeatCount="indefinite"
+                  path="M70 110C130 110 170 190 230 190C290 190 340 110 400 110C460 110 500 210 560 210"
+                />
+              </circle>
 
               <g class="g-node">
                 <circle class="g-disc" cx="70" cy="110" r="28" />
@@ -254,38 +263,74 @@
         <div class="domain-strip">
           <div class="container domain-strip-inner">
             <p>One connected picture across</p>
-            <ul>
-              <li>
-                <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-                  <use href="./assets/icons.svg#cloud-security"></use></svg
-                >Cloud
-              </li>
-              <li>
-                <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-                  <use href="./assets/icons.svg#identity-access"></use></svg
-                >Identity
-              </li>
-              <li>
-                <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-                  <use href="./assets/icons.svg#agent-health"></use></svg
-                >Endpoints
-              </li>
-              <li>
-                <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-                  <use href="./assets/icons.svg#infrastructure-network"></use></svg
-                >Infrastructure
-              </li>
-              <li>
-                <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-                  <use href="./assets/icons.svg#devsecops"></use></svg
-                >Supply chain
-              </li>
-              <li>
-                <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-                  <use href="./assets/icons.svg#ai-exposure"></use></svg
-                >AI exposure
-              </li>
-            </ul>
+            <div class="domain-marquee">
+              <div class="domain-track">
+                <ul>
+                  <li>
+                    <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                      <use href="./assets/icons.svg#cloud-security"></use></svg
+                    >Cloud
+                  </li>
+                  <li>
+                    <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                      <use href="./assets/icons.svg#identity-access"></use></svg
+                    >Identity
+                  </li>
+                  <li>
+                    <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                      <use href="./assets/icons.svg#agent-health"></use></svg
+                    >Endpoints
+                  </li>
+                  <li>
+                    <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                      <use href="./assets/icons.svg#infrastructure-network"></use></svg
+                    >Infrastructure
+                  </li>
+                  <li>
+                    <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                      <use href="./assets/icons.svg#devsecops"></use></svg
+                    >Supply chain
+                  </li>
+                  <li>
+                    <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                      <use href="./assets/icons.svg#ai-exposure"></use></svg
+                    >AI exposure
+                  </li>
+                </ul>
+                <ul aria-hidden="true">
+                  <li>
+                    <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                      <use href="./assets/icons.svg#cloud-security"></use></svg
+                    >Cloud
+                  </li>
+                  <li>
+                    <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                      <use href="./assets/icons.svg#identity-access"></use></svg
+                    >Identity
+                  </li>
+                  <li>
+                    <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                      <use href="./assets/icons.svg#agent-health"></use></svg
+                    >Endpoints
+                  </li>
+                  <li>
+                    <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                      <use href="./assets/icons.svg#infrastructure-network"></use></svg
+                    >Infrastructure
+                  </li>
+                  <li>
+                    <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                      <use href="./assets/icons.svg#devsecops"></use></svg
+                    >Supply chain
+                  </li>
+                  <li>
+                    <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                      <use href="./assets/icons.svg#ai-exposure"></use></svg
+                    >AI exposure
+                  </li>
+                </ul>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -410,11 +455,11 @@
                   aria-label="Illustrative graph: three exposed assets lead through one shared privileged identity to two sensitive resources."
                 >
                   <g class="c-edges">
-                    <path d="M60 62C150 62 170 172 260 172" />
-                    <path d="M60 172H260" />
-                    <path d="M60 282C150 282 170 172 260 172" />
-                    <path d="M260 172C350 172 370 102 456 102" />
-                    <path d="M260 172C350 172 370 242 456 242" />
+                    <path pathLength="1" d="M60 62C150 62 170 172 260 172" />
+                    <path pathLength="1" d="M60 172H260" />
+                    <path pathLength="1" d="M60 282C150 282 170 172 260 172" />
+                    <path pathLength="1" d="M260 172C350 172 370 102 456 102" />
+                    <path pathLength="1" d="M260 172C350 172 370 242 456 242" />
                   </g>
                   <g class="c-flow">
                     <path d="M60 62C150 62 170 172 260 172" />
@@ -593,7 +638,7 @@
                       <circle class="mini-ring-value" cx="60" cy="60" r="50"></circle>
                     </svg>
                     <div>
-                      <strong>71.2<span>%</span></strong
+                      <strong><b data-count="71.2" data-decimals="1">71.2</b><span>%</span></strong
                       ><span>Example pass rate</span>
                     </div>
                   </div>
@@ -872,7 +917,7 @@
               ></a>
             </div>
           </div>
-          <div class="module-groups" data-reveal>
+          <div class="module-groups" data-reveal="stagger">
             <section class="module-group" aria-labelledby="group-intelligence">
               <header>
                 <h3 id="group-intelligence"><i class="group-dot"></i> Intelligence &amp; exposure</h3>
@@ -995,7 +1040,7 @@
             both the detail and the decision.
           </p>
         </div>
-        <div class="team-grid" data-reveal>
+        <div class="team-grid" data-reveal="stagger">
           <article>
             <span class="team-icon"
               ><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
@@ -1062,7 +1107,7 @@
               permissions and activity visible within the platform.
             </p>
           </div>
-          <div class="governance-grid" data-reveal>
+          <div class="governance-grid" data-reveal="stagger">
             <article>
               <span class="governance-icon"
                 ><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
@@ -1178,6 +1223,13 @@
                 d="M40 300 150 210 270 250 380 130 500 170 570 60M150 210 210 90 380 130M270 250 420 300 500 170M210 90 330 30 570 60"
               />
               <path class="contact-mesh-path" d="M40 300 150 210 270 250 380 130 500 170 570 60" />
+              <circle class="contact-packet" r="5">
+                <animateMotion
+                  dur="5s"
+                  repeatCount="indefinite"
+                  path="M40 300 150 210 270 250 380 130 500 170 570 60"
+                />
+              </circle>
               <g>
                 <circle cx="40" cy="300" r="6" />
                 <circle cx="150" cy="210" r="8" />

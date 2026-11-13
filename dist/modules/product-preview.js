@@ -26,6 +26,7 @@ function renderMetric(metric, index) {
   chart.setAttribute('aria-hidden', 'true');
   const path = document.createElementNS(SVG_NAMESPACE, 'path');
   path.setAttribute('d', CHART_PATHS[index] ?? CHART_PATHS[0]);
+  path.setAttribute('pathLength', '1');
   chart.append(path);
 
   card.style.setProperty('--chart-color', metric.color);

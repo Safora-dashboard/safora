@@ -1,0 +1,650 @@
+/* Motion layer. Every rule here is decorative: the base styles are the finished state, and
+   animations play from an offset back to it. Text only ever moves (never fades), so contrast
+   holds mid-animation, and the global reduced-motion rule in base.css switches all of it off. */
+:root {
+  --ease-out: cubic-bezier(0.2, 0.7, 0.2, 1);
+  --ease-spring: cubic-bezier(0.3, 1.5, 0.5, 1);
+}
+
+@keyframes rise {
+  from {
+    transform: translateY(44px);
+  }
+}
+
+@keyframes rise-small {
+  from {
+    transform: translateY(18px);
+  }
+}
+
+@keyframes slide-from-right {
+  from {
+    transform: translateX(40px);
+  }
+}
+
+@keyframes slide-from-left {
+  from {
+    transform: translateX(-32px);
+  }
+}
+
+@keyframes pop {
+  from {
+    transform: scale(0);
+  }
+}
+
+@keyframes draw {
+  from {
+    stroke-dashoffset: 1;
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+}
+
+@keyframes grow-x {
+  from {
+    transform: scaleX(0);
+  }
+}
+
+@keyframes grow-y {
+  from {
+    transform: scaleY(0);
+  }
+}
+
+@keyframes ring-fill {
+  from {
+    stroke-dashoffset: 314.16;
+  }
+}
+
+@keyframes float {
+  to {
+    transform: translateY(-8px);
+  }
+}
+
+@keyframes drift {
+  to {
+    transform: translate3d(-4%, 3%, 0) scale(1.12);
+  }
+}
+
+@keyframes twinkle {
+  to {
+    opacity: 0.35;
+  }
+}
+
+@keyframes beacon {
+  0% {
+    box-shadow: 0 0 0 0 #f5b83d80;
+  }
+  70%,
+  100% {
+    box-shadow: 0 0 0 10px #f5b83d00;
+  }
+}
+
+@keyframes halo {
+  0% {
+    box-shadow:
+      0 12px 26px -8px #7c3aed90,
+      0 0 0 0 #7c3aed66;
+  }
+  70%,
+  100% {
+    box-shadow:
+      0 12px 26px -8px #7c3aed90,
+      0 0 0 18px #7c3aed00;
+  }
+}
+
+@keyframes glow {
+  50% {
+    box-shadow: 0 16px 36px -14px #7c3aedd0;
+  }
+}
+
+@keyframes marquee {
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes shine {
+  to {
+    transform: translateX(260%) skewX(-20deg);
+  }
+}
+
+@keyframes progress {
+  from {
+    transform: scaleX(0);
+  }
+}
+
+/* Stagger indexes shared by every sequenced list */
+:is([data-reveal='stagger'], .shift-rows, .chain, .queue, .control-bars, .module-group ul, .metrics)
+  > :nth-child(2),
+#preview-findings > :nth-child(2) {
+  --i: 1;
+}
+:is([data-reveal='stagger'], .shift-rows, .chain, .queue, .control-bars, .module-group ul, .metrics)
+  > :nth-child(3),
+#preview-findings > :nth-child(3) {
+  --i: 2;
+}
+:is(.shift-rows, .control-bars, .module-group ul, .metrics) > :nth-child(4) {
+  --i: 3;
+}
+:is(.shift-rows, .control-bars, .module-group ul) > :nth-child(5) {
+  --i: 4;
+}
+.module-group ul > :nth-child(6) {
+  --i: 5;
+}
+.module-group ul > :nth-child(7) {
+  --i: 6;
+}
+
+/* Header */
+.site-header {
+  transition: box-shadow 0.3s;
+}
+
+.site-header.is-scrolled {
+  box-shadow: 0 14px 34px -22px #1a0f4b80;
+}
+
+.scroll-progress {
+  display: none;
+}
+
+@supports (animation-timeline: scroll()) {
+  .scroll-progress {
+    position: absolute;
+    inset: auto 0 -1px;
+    display: block;
+    height: 2px;
+    background: linear-gradient(90deg, #7c3aed, #a78bfa 60%, var(--gold));
+    transform-origin: left;
+    animation: progress linear both;
+    animation-timeline: scroll(root);
+  }
+}
+
+/* Primary buttons catch the light on hover */
+.button-primary,
+.button-white {
+  position: relative;
+  overflow: hidden;
+}
+
+:is(.button-primary, .button-white)::after {
+  content: '';
+  position: absolute;
+  inset: 0 auto 0 -60%;
+  width: 45%;
+  background: linear-gradient(90deg, transparent, #ffffff59, transparent);
+  transform: skewX(-20deg);
+  pointer-events: none;
+}
+
+.button-white::after {
+  background: linear-gradient(90deg, transparent, #7c3aed2e, transparent);
+}
+
+:is(.button-primary, .button-white):hover::after {
+  animation: shine 0.8s ease-out;
+}
+
+:is(.button, .path-inspect) > span {
+  transition: transform 0.2s;
+}
+
+:is(.button, .path-inspect):hover > span {
+  transform: translate(2px, -2px);
+}
+
+.masthead-secondary:hover > span {
+  transform: translateY(3px);
+}
+
+/* Hero: load sequence */
+.masthead-glow,
+.module-glow {
+  animation: drift 14s ease-in-out infinite alternate;
+}
+
+.masthead-copy > * {
+  animation: rise 0.9s var(--ease-out) backwards;
+}
+
+.masthead-copy > :nth-child(2) {
+  animation-delay: 0.08s;
+}
+.masthead-copy > :nth-child(3) {
+  animation-delay: 0.16s;
+}
+.masthead-copy > :nth-child(4) {
+  animation-delay: 0.24s;
+}
+.masthead-copy > :nth-child(5) {
+  animation-delay: 0.32s;
+}
+
+.masthead-eyebrow > span {
+  animation: beacon 2.2s ease-out infinite;
+}
+
+.path-panel {
+  animation: rise 1s 0.15s var(--ease-out) backwards;
+}
+
+/* Only the graph floats, so the panel's link stays a steady target. */
+.path-graph {
+  animation: float 6s 1.4s ease-in-out infinite alternate;
+}
+
+.g-main path {
+  stroke-dasharray: 1;
+  animation: draw 0.7s ease-in-out backwards;
+}
+
+.g-main path:nth-child(1) {
+  animation-delay: 0.8s;
+}
+.g-main path:nth-child(2) {
+  animation-delay: 1.4s;
+}
+.g-main path:nth-child(3) {
+  animation-delay: 2s;
+}
+
+.g-flow {
+  animation: fade-in 0.6s 2.7s backwards;
+}
+
+.g-guard {
+  animation:
+    path-flow 2.4s linear infinite,
+    fade-in 0.6s 2.2s backwards;
+}
+
+.g-blocked {
+  animation: fade-in 0.6s 2.6s backwards;
+}
+
+.g-node {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: pop 0.6s var(--ease-spring) backwards;
+}
+
+.g-node:nth-last-of-type(6) {
+  animation-delay: 0.5s;
+}
+.g-node:nth-last-of-type(5) {
+  animation-delay: 1.3s;
+}
+.g-node:nth-last-of-type(4) {
+  animation-delay: 1.9s;
+}
+.g-node:nth-last-of-type(3) {
+  animation-delay: 2.5s;
+}
+.g-node:nth-last-of-type(2) {
+  animation-delay: 2.7s;
+}
+.g-node:nth-last-of-type(1) {
+  animation-delay: 2.9s;
+}
+
+.g-packet {
+  fill: #fff;
+  filter: drop-shadow(0 0 6px #fff) drop-shadow(0 0 14px #c4b0ff);
+  animation: fade-in 0.3s 2.4s backwards;
+}
+
+.g-mesh circle,
+.contact-mesh g circle {
+  animation: twinkle 2.4s ease-in-out infinite alternate;
+}
+
+:is(.g-mesh, .contact-mesh g) circle:nth-child(3n) {
+  animation-delay: 0.8s;
+}
+:is(.g-mesh, .contact-mesh g) circle:nth-child(3n + 1) {
+  animation-delay: 1.6s;
+}
+
+.g-halo {
+  animation: twinkle 3.2s ease-in-out infinite alternate;
+}
+
+/* Domain strip scrolls like a ticker */
+.domain-marquee {
+  flex: 1 1 auto;
+  align-self: stretch;
+  min-width: 0;
+  overflow: hidden;
+  mask-image: linear-gradient(90deg, transparent, #000 7%, #000 93%, transparent);
+}
+
+.domain-track {
+  display: flex;
+  width: max-content;
+  animation: marquee 34s linear infinite;
+}
+
+.domain-marquee:hover .domain-track {
+  animation-play-state: paused;
+}
+
+.domain-strip .domain-track ul {
+  flex-wrap: nowrap;
+  gap: 0;
+}
+
+.domain-strip .domain-track li {
+  margin-right: 52px;
+  white-space: nowrap;
+}
+
+/* Scroll reveal: sections rise into place, grids arrive one card at a time */
+.reveal-ready [data-reveal]:not([data-reveal='stagger'], .is-revealed),
+.reveal-ready [data-reveal='stagger']:not(.is-revealed) > * {
+  transform: translateY(44px);
+}
+
+.reveal-ready [data-reveal]:not([data-reveal='stagger']).is-revealed {
+  animation: rise 0.9s var(--ease-out) backwards;
+}
+
+.reveal-ready [data-reveal='stagger'].is-revealed > * {
+  animation: rise 0.9s var(--ease-out) backwards;
+  animation-delay: calc(var(--i, 0) * 120ms);
+}
+
+/* Statement graphic */
+.shift-arrow {
+  animation: halo 2.4s ease-out infinite;
+}
+
+.chain::before {
+  transform-origin: top;
+}
+
+.reveal-ready :not(.is-revealed) > .shift-before .shift-rows li {
+  transform: translateX(-32px);
+}
+
+.reveal-ready .is-revealed .shift-rows li {
+  animation: slide-from-left 0.7s var(--ease-out) backwards;
+  animation-delay: calc(var(--i, 0) * 90ms + 150ms);
+}
+
+.reveal-ready :not(.is-revealed) > .shift-after .chain li {
+  transform: translateX(40px);
+}
+
+.reveal-ready .is-revealed .chain li {
+  animation: slide-from-right 0.8s var(--ease-out) backwards;
+  animation-delay: calc(var(--i, 0) * 220ms + 500ms);
+}
+
+.reveal-ready :not(.is-revealed) > .shift-after .chain::before {
+  transform: scaleY(0);
+}
+
+.reveal-ready .is-revealed .chain::before {
+  animation: grow-y 1.2s 0.7s ease-in-out backwards;
+}
+
+.reveal-ready :not(.is-revealed) > .shift-after .chain-icon {
+  transform: scale(0);
+}
+
+.reveal-ready .is-revealed .chain-icon {
+  animation: pop 0.6s var(--ease-spring) backwards;
+  animation-delay: calc(var(--i, 0) * 220ms + 700ms);
+}
+
+.chain li:nth-child(2) .chain-icon {
+  --i: 1;
+}
+.chain li:nth-child(3) .chain-icon {
+  --i: 2;
+}
+
+/* Feature illustrations draw themselves when their row arrives */
+.c-edges path {
+  stroke-dasharray: 1;
+}
+
+.c-node {
+  transform-box: fill-box;
+  transform-origin: center;
+}
+
+.reveal-ready .feature-row:not(.is-revealed) .c-edges path {
+  stroke-dashoffset: 1;
+}
+
+.reveal-ready .feature-row.is-revealed .c-edges path {
+  animation: draw 0.9s 0.5s ease-in-out backwards;
+}
+
+.reveal-ready .feature-row.is-revealed .c-edges path:nth-child(n + 4) {
+  animation-delay: 1.4s;
+}
+
+.reveal-ready .feature-row:not(.is-revealed) .c-flow {
+  opacity: 0;
+}
+
+.reveal-ready .feature-row.is-revealed .c-flow {
+  animation: fade-in 0.6s 2.3s backwards;
+}
+
+.reveal-ready .feature-row:not(.is-revealed) .c-node {
+  transform: scale(0);
+}
+
+.reveal-ready .feature-row.is-revealed .c-node {
+  animation: pop 0.6s 0.3s var(--ease-spring) backwards;
+}
+
+.reveal-ready .feature-row.is-revealed .c-hub {
+  animation-delay: 1.2s;
+}
+
+.reveal-ready .feature-row.is-revealed .c-target {
+  animation-delay: 2.1s;
+}
+
+.queue li.is-first {
+  animation: glow 3s ease-in-out infinite;
+}
+
+.reveal-ready .feature-row:not(.is-revealed) .queue li {
+  transform: translateX(40px);
+}
+
+.reveal-ready .feature-row.is-revealed .queue li {
+  animation: slide-from-right 0.8s var(--ease-out) backwards;
+  animation-delay: calc(var(--i, 0) * 160ms + 300ms);
+}
+
+.reveal-ready .feature-row.is-revealed .queue li.is-first {
+  animation:
+    slide-from-right 0.8s 0.3s var(--ease-out) backwards,
+    glow 3s 1.4s ease-in-out infinite;
+}
+
+.control-bars i {
+  transform-origin: left;
+}
+
+.reveal-ready .feature-row:not(.is-revealed) .mini-ring-value {
+  stroke-dashoffset: 314.16;
+}
+
+.reveal-ready .feature-row.is-revealed .mini-ring-value {
+  animation: ring-fill 1.6s 0.4s var(--ease-out) backwards;
+}
+
+.reveal-ready .feature-row:not(.is-revealed) .control-bars i {
+  transform: scaleX(0);
+}
+
+.reveal-ready .feature-row.is-revealed .control-bars i {
+  animation: grow-x 1.1s var(--ease-out) backwards;
+  animation-delay: calc(var(--i, 0) * 130ms + 400ms);
+}
+
+/* Explorer: figures settle and sparklines draw on every view change */
+.metric {
+  animation: rise-small 0.6s var(--ease-out) backwards;
+  animation-delay: calc(var(--i, 0) * 70ms);
+}
+
+.metric-chart path {
+  stroke-dasharray: 1;
+  animation: draw 1.2s 0.25s ease-out backwards;
+}
+
+.finding-row {
+  animation: slide-from-left 0.6s var(--ease-out) backwards;
+  animation-delay: calc(var(--i, 0) * 90ms + 120ms);
+}
+
+.product-tabs button {
+  transition:
+    background 0.25s,
+    color 0.25s,
+    box-shadow 0.25s;
+}
+
+.product-tabs button[aria-selected='true'] {
+  box-shadow: inset 0 -2px 0 var(--purple);
+}
+
+/* Modules */
+.reveal-ready [data-reveal]:not(.is-revealed) .module-group li {
+  transform: translateX(-24px);
+}
+
+.reveal-ready .is-revealed .module-group li {
+  animation: slide-from-left 0.6s var(--ease-out) backwards;
+  animation-delay: calc(var(--i, 0) * 70ms + 350ms);
+}
+
+.module-group li .icon {
+  transition:
+    transform 0.25s var(--ease-spring),
+    background 0.25s;
+}
+
+.module-group li:hover .icon {
+  transform: scale(1.12) rotate(-6deg);
+  background: #7c3aed80;
+}
+
+.team-icon {
+  transition: transform 0.35s var(--ease-spring);
+}
+
+.team-grid > article:hover .team-icon {
+  transform: translateY(-4px) rotate(-6deg) scale(1.06);
+}
+
+/* Cursor spotlight on cards (enabled from motion.js) */
+.has-spotlight {
+  position: relative;
+}
+
+.has-spotlight::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: radial-gradient(
+    340px circle at var(--spot-x, 50%) var(--spot-y, 50%),
+    var(--spot-color, #7c3aed14),
+    transparent 70%
+  );
+  opacity: 0;
+  transition: opacity 0.35s;
+  pointer-events: none;
+}
+
+.has-spotlight:hover::after {
+  opacity: 1;
+}
+
+.module-group {
+  --spot-color: #a78bfa33;
+  transition: border-color 0.3s;
+}
+
+.module-group:hover {
+  border-color: #a78bfa80;
+}
+
+.governance-grid article,
+.fx-card {
+  transition:
+    transform 0.3s var(--ease-out),
+    box-shadow 0.3s,
+    border-color 0.3s;
+}
+
+.governance-grid article:hover {
+  transform: translateY(-5px);
+  border-color: #cdbcf3;
+  box-shadow: 0 26px 50px -32px #3b1f8280;
+}
+
+/* Rows slide in from the side; clip them to the card so the page never widens. */
+.fx-card {
+  overflow: clip;
+}
+
+.fx-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 44px 80px -38px #3b1f8280;
+}
+
+/* Closing band */
+.contact-packet {
+  fill: var(--gold);
+  filter: drop-shadow(0 0 8px #f5b83d);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .g-packet,
+  .contact-packet,
+  .domain-track ul[aria-hidden],
+  .scroll-progress {
+    display: none;
+  }
+
+  .domain-track {
+    width: auto;
+  }
+
+  .domain-strip .domain-track ul {
+    flex-wrap: wrap;
+    row-gap: 12px;
+  }
+}
