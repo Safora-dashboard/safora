@@ -1,0 +1,312 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Control validation | SAFORA</title>
+    <meta
+      name="description"
+      content="Review control assessment results, failed checks and agent coverage to understand where your defenses need attention."
+    />
+    <meta name="theme-color" content="#0b0920" />
+    <meta property="og:title" content="Control validation | SAFORA" />
+    <meta
+      property="og:description"
+      content="Review assessment results, failed checks and coverage with the evidence behind them."
+    />
+    <meta property="og:type" content="website" />
+    <link rel="icon" href="../favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="../style.css" />
+    <script type="module" src="../page.js"></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header">
+      <span class="scroll-progress" aria-hidden="true"></span>
+      <div class="container header-inner">
+        <a class="brand" href="../" aria-label="SAFORA home">
+          <img src="../assets/safora-logo.jpeg" width="148" height="50" alt="SAFORA" />
+        </a>
+        <button
+          class="menu-toggle"
+          type="button"
+          aria-expanded="false"
+          aria-controls="main-nav"
+          aria-label="Open navigation"
+        >
+          <span></span><span></span><span></span>
+        </button>
+        <nav class="main-nav" id="main-nav" aria-label="Main navigation">
+          <a href="../#platform">Platform</a>
+          <a href="../#approach">How it works</a>
+          <a href="../#modules">Modules</a>
+          <a href="../#use-cases">Use cases</a>
+          <a href="../#questions">FAQs</a>
+        </nav>
+        <a class="button button-primary header-cta" href="../#contact"
+          >Get a demo
+          <span aria-hidden="true"
+            ><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+              <use href="../assets/icons.svg#arrow-up-right"></use></svg></span
+        ></a>
+      </div>
+    </header>
+
+    <main id="main">
+      <section class="masthead uc-hero" aria-labelledby="uc-title">
+        <div class="masthead-grid" aria-hidden="true"></div>
+        <div class="masthead-glow" aria-hidden="true"></div>
+        <div class="container masthead-inner">
+          <div class="masthead-copy">
+            <p class="uc-breadcrumb">
+              <a href="../#use-cases">Use cases</a> <span aria-hidden="true">/</span> Control validation
+            </p>
+            <h1 id="uc-title">Control validation, <span>with the evidence behind the result.</span></h1>
+            <p class="masthead-description">
+              Review control assessment results, failed checks and agent coverage to understand where your
+              defenses need attention.
+            </p>
+            <div class="button-row masthead-actions">
+              <a class="button button-primary" href="../#contact"
+                >Get a demo
+                <span aria-hidden="true"
+                  ><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                    <use href="../assets/icons.svg#arrow-up-right"></use></svg></span
+              ></a>
+              <a class="button masthead-secondary" href="../#platform"
+                >See it in the explorer
+                <span aria-hidden="true"
+                  ><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                    <use href="../assets/icons.svg#arrow-right"></use></svg></span
+              ></a>
+            </div>
+          </div>
+          <div class="uc-visual" data-reveal>
+            <div class="fx-card">
+              <div class="fx-bar"><span>CONTROL VALIDATION</span><span>ILLUSTRATIVE</span></div>
+              <div class="validation">
+                <div class="mini-ring">
+                  <svg viewBox="0 0 120 120" aria-hidden="true">
+                    <circle class="mini-ring-track" cx="60" cy="60" r="50"></circle>
+                    <circle class="mini-ring-value" cx="60" cy="60" r="50"></circle>
+                  </svg>
+                  <div>
+                    <strong><b data-count="71.2" data-decimals="1">71.2</b><span>%</span></strong
+                    ><span>Example pass rate</span>
+                  </div>
+                </div>
+                <ul class="control-bars">
+                  <li><span>WAF</span><i style="--pass: 52%"></i><em class="review">Review</em></li>
+                  <li><span>EDR</span><i style="--pass: 64%"></i><em class="review">Review</em></li>
+                  <li><span>DLP</span><i style="--pass: 70%"></i><em class="review">Review</em></li>
+                  <li><span>Email</span><i style="--pass: 88%"></i><em>Passed</em></li>
+                  <li><span>Identity</span><i style="--pass: 92%"></i><em>Passed</em></li>
+                </ul>
+              </div>
+              <p class="fx-foot">
+                <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                  <use href="../assets/icons.svg#corner-down-right"></use></svg
+                >Each result links back to the checks behind it.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section container" aria-labelledby="challenge-title">
+        <div class="section-heading centered" data-reveal>
+          <p class="eyebrow">THE CHALLENGE</p>
+          <h2 id="challenge-title">Why this is hard today.</h2>
+        </div>
+        <div class="governance-grid" data-reveal="stagger">
+          <article>
+            <span class="governance-icon"
+              ><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                <use href="../assets/icons.svg#control-validation"></use></svg
+            ></span>
+            <h3>Deployed is not the same as effective</h3>
+            <p>A control can be in place and still fail the checks it is expected to pass.</p>
+          </article>
+          <article>
+            <span class="governance-icon"
+              ><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                <use href="../assets/icons.svg#agent-health"></use></svg
+            ></span>
+            <h3>Coverage gaps hide</h3>
+            <p>An asset without a healthy agent weakens the controls that depend on it.</p>
+          </article>
+          <article>
+            <span class="governance-icon"
+              ><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                <use href="../assets/icons.svg#audit"></use></svg
+            ></span>
+            <h3>Pass rates lack detail</h3>
+            <p>A percentage is only useful with a path to the checks behind it.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section approach-section" aria-labelledby="help-title">
+        <div class="container">
+          <div class="section-heading centered" data-reveal>
+            <p class="eyebrow">HOW SAFORA HELPS</p>
+            <h2 id="help-title">Three steps, one workspace.</h2>
+          </div>
+          <ol class="uc-steps" data-reveal="stagger">
+            <li>
+              <span class="uc-step-number" aria-hidden="true">01</span>
+              <h3>Review the assessment</h3>
+              <p>
+                Security Control Validation shows the controls assessed, passed and failed checks, and the
+                pass rate.
+              </p>
+            </li>
+            <li>
+              <span class="uc-step-number" aria-hidden="true">02</span>
+              <h3>Open a failed check</h3>
+              <p>Each finding carries its evidence, the affected control and investigation guidance.</p>
+            </li>
+            <li>
+              <span class="uc-step-number" aria-hidden="true">03</span>
+              <h3>Check the coverage</h3>
+              <p>Agent Coverage &amp; Health shows where coverage conditions need review.</p>
+            </li>
+          </ol>
+          <div class="uc-modules" data-reveal>
+            <p>Related in the platform</p>
+            <ul>
+              <li>Security Control Validation</li>
+              <li>Agent Coverage &amp; Health</li>
+              <li>Campaign Simulation</li>
+              <li>Enterprise Infrastructure</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="section container" aria-labelledby="related-title">
+        <div class="section-heading centered" data-reveal>
+          <p class="eyebrow">KEEP EXPLORING</p>
+          <h2 id="related-title">Other use cases.</h2>
+        </div>
+        <div class="use-case-grid is-related" data-reveal="stagger">
+          <a class="use-case-card" href="./exposure-management.html">
+            <span class="use-case-icon"
+              ><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                <use href="../assets/icons.svg#exposure-graph"></use></svg
+            ></span>
+            <h3>Exposure management</h3>
+            <p>See exposed assets as connected paths, with the identities and infrastructure around them.</p>
+            <span class="use-case-more"
+              >Read the use case
+              <span aria-hidden="true"
+                ><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                  <use href="../assets/icons.svg#arrow-right"></use></svg></span
+            ></span>
+          </a>
+          <a class="use-case-card" href="./cloud-security.html">
+            <span class="use-case-icon"
+              ><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                <use href="../assets/icons.svg#cloud-security"></use></svg
+            ></span>
+            <h3>Cloud security</h3>
+            <p>Investigate findings across Azure, AWS and Microsoft 365 with scope and asset context.</p>
+            <span class="use-case-more"
+              >Read the use case
+              <span aria-hidden="true"
+                ><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                  <use href="../assets/icons.svg#arrow-right"></use></svg></span
+            ></span>
+          </a>
+          <a class="use-case-card" href="./identity-risk.html">
+            <span class="use-case-icon"
+              ><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                <use href="../assets/icons.svg#identity-access"></use></svg
+            ></span>
+            <h3>Identity risk</h3>
+            <p>Review privileged access next to the resources and exposure it relates to.</p>
+            <span class="use-case-more"
+              >Read the use case
+              <span aria-hidden="true"
+                ><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                  <use href="../assets/icons.svg#arrow-right"></use></svg></span
+            ></span>
+          </a>
+          <a class="use-case-card" href="./risk-reporting.html">
+            <span class="use-case-icon"
+              ><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                <use href="../assets/icons.svg#crq-financial"></use></svg
+            ></span>
+            <h3>Risk reporting</h3>
+            <p>Give leadership a view of posture and risk that leads back to the detail.</p>
+            <span class="use-case-more"
+              >Read the use case
+              <span aria-hidden="true"
+                ><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                  <use href="../assets/icons.svg#arrow-right"></use></svg></span
+            ></span>
+          </a>
+        </div>
+      </section>
+
+      <section class="contact-section" aria-labelledby="cta-title">
+        <div class="container">
+          <div class="contact-inner">
+            <div class="contact-copy">
+              <p class="eyebrow">SEE IT WITH OUR TEAM</p>
+              <h2 id="cta-title">Talk through control validation for your environment.</h2>
+              <p>A walkthrough focused on your priorities. Bring your questions.</p>
+              <div class="button-row">
+                <a class="button button-white" href="../#contact"
+                  >Get a demo
+                  <span aria-hidden="true"
+                    ><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                      <use href="../assets/icons.svg#arrow-up-right"></use></svg></span></a
+                ><a class="contact-email" href="mailto:support@safora.ai">support@safora.ai</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer container">
+      <div class="footer-top">
+        <div>
+          <a class="brand" href="../" aria-label="SAFORA home"
+            ><img src="../assets/safora-logo.jpeg" width="148" height="50" alt="SAFORA" loading="lazy"
+          /></a>
+          <p>Cyber Security Command Center.<br />Clarity across your security environment.</p>
+        </div>
+        <div class="footer-links">
+          <div>
+            <h2>Explore SAFORA</h2>
+            <a href="../#platform">The platform</a><a href="../#approach">How it works</a
+            ><a href="../#modules">All 17 modules</a><a href="../#teams">Built for your team</a>
+          </div>
+          <div>
+            <h2>Use cases</h2>
+            <a href="./exposure-management.html">Exposure management</a
+            ><a href="./cloud-security.html">Cloud security</a><a href="./identity-risk.html">Identity risk</a
+            ><a href="./control-validation.html">Control validation</a
+            ><a href="./risk-reporting.html">Risk reporting</a>
+          </div>
+          <div>
+            <h2>Let's connect</h2>
+            <a href="../#contact">Request a demo</a><a href="mailto:support@safora.ai">support@safora.ai</a
+            ><a href="../#questions">Common questions</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; <span id="year">2026</span> SAFORA. All rights reserved.</p>
+        <a href="#main"
+          >Back to top
+          <span aria-hidden="true"
+            ><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+              <use href="../assets/icons.svg#arrow-up"></use></svg></span
+        ></a>
+      </div>
+    </footer>
+  </body>
+</html>

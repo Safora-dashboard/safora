@@ -25,6 +25,9 @@
 * {
   box-sizing: border-box;
 }
+[hidden] {
+  display: none !important;
+}
 body {
   margin: 0;
   -webkit-font-smoothing: antialiased;
@@ -38,7 +41,9 @@ figure {
   margin: 0;
 }
 button,
-input {
+input,
+select,
+textarea {
   font: inherit;
 }
 button,

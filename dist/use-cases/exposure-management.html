@@ -1,0 +1,385 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Exposure management | SAFORA</title>
+    <meta
+      name="description"
+      content="Explore exposed assets alongside the identities and infrastructure around them, so an investigation starts from how issues relate rather than from a flat list."
+    />
+    <meta name="theme-color" content="#0b0920" />
+    <meta property="og:title" content="Exposure management | SAFORA" />
+    <meta
+      property="og:description"
+      content="See exposed assets as connected paths, with the identities and infrastructure around them."
+    />
+    <meta property="og:type" content="website" />
+    <link rel="icon" href="../favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="../style.css" />
+    <script type="module" src="../page.js"></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header">
+      <span class="scroll-progress" aria-hidden="true"></span>
+      <div class="container header-inner">
+        <a class="brand" href="../" aria-label="SAFORA home">
+          <img src="../assets/safora-logo.jpeg" width="148" height="50" alt="SAFORA" />
+        </a>
+        <button
+          class="menu-toggle"
+          type="button"
+          aria-expanded="false"
+          aria-controls="main-nav"
+          aria-label="Open navigation"
+        >
+          <span></span><span></span><span></span>
+        </button>
+        <nav class="main-nav" id="main-nav" aria-label="Main navigation">
+          <a href="../#platform">Platform</a>
+          <a href="../#approach">How it works</a>
+          <a href="../#modules">Modules</a>
+          <a href="../#use-cases">Use cases</a>
+          <a href="../#questions">FAQs</a>
+        </nav>
+        <a class="button button-primary header-cta" href="../#contact"
+          >Get a demo
+          <span aria-hidden="true"
+            ><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+              <use href="../assets/icons.svg#arrow-up-right"></use></svg></span
+        ></a>
+      </div>
+    </header>
+
+    <main id="main">
+      <section class="masthead uc-hero" aria-labelledby="uc-title">
+        <div class="masthead-grid" aria-hidden="true"></div>
+        <div class="masthead-glow" aria-hidden="true"></div>
+        <div class="container masthead-inner">
+          <div class="masthead-copy">
+            <p class="uc-breadcrumb">
+              <a href="../#use-cases">Use cases</a> <span aria-hidden="true">/</span> Exposure management
+            </p>
+            <h1 id="uc-title">Exposure management, <span>seen as connected paths.</span></h1>
+            <p class="masthead-description">
+              Explore exposed assets alongside the identities and infrastructure around them, so an
+              investigation starts from how issues relate rather than from a flat list.
+            </p>
+            <div class="button-row masthead-actions">
+              <a class="button button-primary" href="../#contact"
+                >Get a demo
+                <span aria-hidden="true"
+                  ><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                    <use href="../assets/icons.svg#arrow-up-right"></use></svg></span
+              ></a>
+              <a class="button masthead-secondary" href="../#platform"
+                >See it in the explorer
+                <span aria-hidden="true"
+                  ><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                    <use href="../assets/icons.svg#arrow-right"></use></svg></span
+              ></a>
+            </div>
+          </div>
+          <div class="uc-visual" data-reveal>
+            <div class="fx-card">
+              <div class="fx-bar"><span>EXPOSURE GRAPH</span><span>ILLUSTRATIVE</span></div>
+              <svg
+                class="converge-graph"
+                viewBox="0 0 520 350"
+                role="img"
+                aria-label="Illustrative graph: three exposed assets lead through one shared privileged identity to two sensitive resources."
+              >
+                <g class="c-edges">
+                  <path pathLength="1" d="M60 62C150 62 170 172 260 172" />
+                  <path pathLength="1" d="M60 172H260" />
+                  <path pathLength="1" d="M60 282C150 282 170 172 260 172" />
+                  <path pathLength="1" d="M260 172C350 172 370 102 456 102" />
+                  <path pathLength="1" d="M260 172C350 172 370 242 456 242" />
+                </g>
+                <g class="c-flow">
+                  <path d="M60 62C150 62 170 172 260 172" />
+                  <path d="M60 172H260" />
+                  <path d="M60 282C150 282 170 172 260 172" />
+                  <path d="M260 172C350 172 370 102 456 102" />
+                  <path d="M260 172C350 172 370 242 456 242" />
+                </g>
+                <g class="c-node">
+                  <circle cx="60" cy="62" r="22" />
+                  <use
+                    class="g-icon"
+                    href="../assets/icons.svg#external-service"
+                    x="50"
+                    y="52"
+                    width="20"
+                    height="20"
+                  />
+                  <text x="60" y="104">Public app</text>
+                </g>
+                <g class="c-node">
+                  <circle cx="60" cy="172" r="22" />
+                  <use
+                    class="g-icon"
+                    href="../assets/icons.svg#cloud-security"
+                    x="50"
+                    y="162"
+                    width="20"
+                    height="20"
+                  />
+                  <text x="60" y="214">Cloud workload</text>
+                </g>
+                <g class="c-node">
+                  <circle cx="60" cy="282" r="22" />
+                  <use
+                    class="g-icon"
+                    href="../assets/icons.svg#agent-health"
+                    x="50"
+                    y="272"
+                    width="20"
+                    height="20"
+                  />
+                  <text x="60" y="324">Endpoint</text>
+                </g>
+                <g class="c-node c-hub">
+                  <circle class="c-ring" cx="260" cy="172" r="46" />
+                  <circle cx="260" cy="172" r="30" />
+                  <use
+                    class="g-icon"
+                    href="../assets/icons.svg#identity-access"
+                    x="248"
+                    y="160"
+                    width="24"
+                    height="24"
+                  />
+                  <rect x="204" y="96" width="112" height="20" rx="10" />
+                  <text class="c-tag" x="260" y="110">PATHS CONVERGE</text>
+                  <text x="260" y="240">Privileged identity</text>
+                </g>
+                <g class="c-node c-target">
+                  <circle cx="456" cy="102" r="22" />
+                  <use
+                    class="g-icon"
+                    href="../assets/icons.svg#workspace-lock"
+                    x="446"
+                    y="92"
+                    width="20"
+                    height="20"
+                  />
+                  <text x="456" y="144">Data store</text>
+                </g>
+                <g class="c-node c-target">
+                  <circle cx="456" cy="242" r="22" />
+                  <use
+                    class="g-icon"
+                    href="../assets/icons.svg#permissions"
+                    x="446"
+                    y="232"
+                    width="20"
+                    height="20"
+                  />
+                  <text x="456" y="284">Admin console</text>
+                </g>
+              </svg>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section container" aria-labelledby="challenge-title">
+        <div class="section-heading centered" data-reveal>
+          <p class="eyebrow">THE CHALLENGE</p>
+          <h2 id="challenge-title">Why this is hard today.</h2>
+        </div>
+        <div class="governance-grid" data-reveal="stagger">
+          <article>
+            <span class="governance-icon"
+              ><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                <use href="../assets/icons.svg#exposure-graph"></use></svg
+            ></span>
+            <h3>Findings arrive as lists</h3>
+            <p>Exposure data from different tools rarely shows how one issue leads to the next.</p>
+          </article>
+          <article>
+            <span class="governance-icon"
+              ><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                <use href="../assets/icons.svg#identity-access"></use></svg
+            ></span>
+            <h3>Access changes the picture</h3>
+            <p>An exposed asset matters more when a privileged identity is associated with it.</p>
+          </article>
+          <article>
+            <span class="governance-icon"
+              ><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                <use href="../assets/icons.svg#threat-hunting"></use></svg
+            ></span>
+            <h3>Priorities are hard to defend</h3>
+            <p>Without context, severity alone decides what gets looked at first.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section approach-section" aria-labelledby="help-title">
+        <div class="container">
+          <div class="section-heading centered" data-reveal>
+            <p class="eyebrow">HOW SAFORA HELPS</p>
+            <h2 id="help-title">Three steps, one workspace.</h2>
+          </div>
+          <ol class="uc-steps" data-reveal="stagger">
+            <li>
+              <span class="uc-step-number" aria-hidden="true">01</span>
+              <h3>Map what is reachable</h3>
+              <p>
+                Use the Adversarial Exposure Graph and Exposure Intelligence to explore exposed assets and the
+                paths around them.
+              </p>
+            </li>
+            <li>
+              <span class="uc-step-number" aria-hidden="true">02</span>
+              <h3>Add the identity context</h3>
+              <p>Review associated access from Identity &amp; Access in the same investigation.</p>
+            </li>
+            <li>
+              <span class="uc-step-number" aria-hidden="true">03</span>
+              <h3>Follow it to the evidence</h3>
+              <p>Open a finding to see its assessment evidence, guidance, status and history.</p>
+            </li>
+          </ol>
+          <div class="uc-modules" data-reveal>
+            <p>Related in the platform</p>
+            <ul>
+              <li>Adversarial Exposure Graph</li>
+              <li>Exposure Intelligence</li>
+              <li>Attack Pressure</li>
+              <li>Active Attack</li>
+              <li>Identity &amp; Access</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="section container" aria-labelledby="related-title">
+        <div class="section-heading centered" data-reveal>
+          <p class="eyebrow">KEEP EXPLORING</p>
+          <h2 id="related-title">Other use cases.</h2>
+        </div>
+        <div class="use-case-grid is-related" data-reveal="stagger">
+          <a class="use-case-card" href="./cloud-security.html">
+            <span class="use-case-icon"
+              ><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                <use href="../assets/icons.svg#cloud-security"></use></svg
+            ></span>
+            <h3>Cloud security</h3>
+            <p>Investigate findings across Azure, AWS and Microsoft 365 with scope and asset context.</p>
+            <span class="use-case-more"
+              >Read the use case
+              <span aria-hidden="true"
+                ><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                  <use href="../assets/icons.svg#arrow-right"></use></svg></span
+            ></span>
+          </a>
+          <a class="use-case-card" href="./identity-risk.html">
+            <span class="use-case-icon"
+              ><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                <use href="../assets/icons.svg#identity-access"></use></svg
+            ></span>
+            <h3>Identity risk</h3>
+            <p>Review privileged access next to the resources and exposure it relates to.</p>
+            <span class="use-case-more"
+              >Read the use case
+              <span aria-hidden="true"
+                ><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                  <use href="../assets/icons.svg#arrow-right"></use></svg></span
+            ></span>
+          </a>
+          <a class="use-case-card" href="./control-validation.html">
+            <span class="use-case-icon"
+              ><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                <use href="../assets/icons.svg#control-validation"></use></svg
+            ></span>
+            <h3>Control validation</h3>
+            <p>Review assessment results, failed checks and coverage with the evidence behind them.</p>
+            <span class="use-case-more"
+              >Read the use case
+              <span aria-hidden="true"
+                ><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                  <use href="../assets/icons.svg#arrow-right"></use></svg></span
+            ></span>
+          </a>
+          <a class="use-case-card" href="./risk-reporting.html">
+            <span class="use-case-icon"
+              ><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                <use href="../assets/icons.svg#crq-financial"></use></svg
+            ></span>
+            <h3>Risk reporting</h3>
+            <p>Give leadership a view of posture and risk that leads back to the detail.</p>
+            <span class="use-case-more"
+              >Read the use case
+              <span aria-hidden="true"
+                ><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                  <use href="../assets/icons.svg#arrow-right"></use></svg></span
+            ></span>
+          </a>
+        </div>
+      </section>
+
+      <section class="contact-section" aria-labelledby="cta-title">
+        <div class="container">
+          <div class="contact-inner">
+            <div class="contact-copy">
+              <p class="eyebrow">SEE IT WITH OUR TEAM</p>
+              <h2 id="cta-title">Talk through exposure management for your environment.</h2>
+              <p>A walkthrough focused on your priorities. Bring your questions.</p>
+              <div class="button-row">
+                <a class="button button-white" href="../#contact"
+                  >Get a demo
+                  <span aria-hidden="true"
+                    ><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                      <use href="../assets/icons.svg#arrow-up-right"></use></svg></span></a
+                ><a class="contact-email" href="mailto:support@safora.ai">support@safora.ai</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer container">
+      <div class="footer-top">
+        <div>
+          <a class="brand" href="../" aria-label="SAFORA home"
+            ><img src="../assets/safora-logo.jpeg" width="148" height="50" alt="SAFORA" loading="lazy"
+          /></a>
+          <p>Cyber Security Command Center.<br />Clarity across your security environment.</p>
+        </div>
+        <div class="footer-links">
+          <div>
+            <h2>Explore SAFORA</h2>
+            <a href="../#platform">The platform</a><a href="../#approach">How it works</a
+            ><a href="../#modules">All 17 modules</a><a href="../#teams">Built for your team</a>
+          </div>
+          <div>
+            <h2>Use cases</h2>
+            <a href="./exposure-management.html">Exposure management</a
+            ><a href="./cloud-security.html">Cloud security</a><a href="./identity-risk.html">Identity risk</a
+            ><a href="./control-validation.html">Control validation</a
+            ><a href="./risk-reporting.html">Risk reporting</a>
+          </div>
+          <div>
+            <h2>Let's connect</h2>
+            <a href="../#contact">Request a demo</a><a href="mailto:support@safora.ai">support@safora.ai</a
+            ><a href="../#questions">Common questions</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; <span id="year">2026</span> SAFORA. All rights reserved.</p>
+        <a href="#main"
+          >Back to top
+          <span aria-hidden="true"
+            ><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+              <use href="../assets/icons.svg#arrow-up"></use></svg></span
+        ></a>
+      </div>
+    </footer>
+  </body>
+</html>

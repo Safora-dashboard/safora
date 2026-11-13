@@ -85,4 +85,6 @@ export function initializeProductPreview() {
       });
     }
   }
+
+  return { tabs, dialog };
 }

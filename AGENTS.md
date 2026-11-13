@@ -35,9 +35,9 @@ The local page is http://localhost:4175. Browser tests install Chromium with `np
 
 ## Editing and validation
 
-Keep semantic page content in `dist/index.html`, interactions in the typed modules under `dist/modules/`, and section styles under `dist/styles/`. Icons share the 24px outline sprite in `dist/assets/icons.svg`; do not restore the old colorful dashboard illustrations.
+Keep semantic page content in `dist/index.html`, interactions in the typed modules under `dist/modules/`, and section styles under `dist/styles/`. Use-case pages live in `dist/use-cases/` as plain HTML; they share the home page's header and footer markup (keep the copies in sync), load `dist/page.js` instead of `dist/app.js`, and reference assets with `../`. Icons share the 24px outline sprite in `dist/assets/icons.svg`; do not restore the old colorful dashboard illustrations.
 
-Preserve the SAFORA logo, purple/navy identity, keyboard navigation, accessible finding dialog, reduced-motion support and clear demo-data labeling. Demo contact links use `support@safora.ai`; do not imply live integrations or collect visitor data without implementing the corresponding behavior.
+Preserve the SAFORA logo, purple/navy identity, keyboard navigation, accessible finding dialog, reduced-motion support and clear demo-data labeling. Demo contact links use `support@safora.ai`. The demo-request form only prepares an email in the visitor's own mail app (`dist/modules/demo-form.js`); it must not transmit or store submissions unless a real endpoint and privacy notice are added; do not imply live integrations or collect visitor data without implementing the corresponding behavior.
 
 Run checks appropriate to the change. Browser tests cover the three preview views, narrow layouts, finding dialogs and accessibility. Generated screenshots, research scripts and reports belong in ignored `artifacts/`, `test-results/` or `playwright-report/`, never in the static deployment.
 

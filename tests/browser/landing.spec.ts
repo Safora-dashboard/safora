@@ -19,7 +19,9 @@ for (const width of [320, 390, 640, 768, 1024, 1440, 1920]) {
 
     for (const view of views) {
       await page.getByRole('tab', { name: view.tab }).click();
-      await expect(page.getByRole('heading', { name: view.title, exact: true })).toBeVisible();
+      await expect(
+        page.locator('#product-panel').getByRole('heading', { name: view.title, exact: true }),
+      ).toBeVisible();
       await expect(page.locator('#posture-value')).toHaveText(view.score);
       await expect(page.locator('.metric')).toHaveCount(4);
       await expect(page.locator('.finding-row')).toHaveCount(3);
@@ -107,7 +109,9 @@ test('context links select the intended product view', async ({ page }) => {
     'aria-selected',
     'true',
   );
-  await expect(page.getByRole('heading', { name: 'Security control validation', exact: true })).toBeVisible();
+  await expect(
+    page.locator('#product-panel').getByRole('heading', { name: 'Security control validation', exact: true }),
+  ).toBeVisible();
 });
 
 test('hero investigation opens evidence and restores the originating link', async ({ page }) => {
@@ -139,10 +143,9 @@ test('essential content and demo contact work without JavaScript', async ({ brow
   const page = await context.newPage();
   await page.goto('./');
   await expect(page.getByRole('heading', { level: 1 })).toBeVisible();
-  await expect(page.getByRole('link', { name: 'Get a demo' }).first()).toHaveAttribute(
-    'href',
-    /mailto:support@safora.ai/,
-  );
+  await expect(page.getByRole('link', { name: 'Get a demo' }).first()).toHaveAttribute('href', '#contact');
+  await expect(page.locator('#demo-form')).toHaveAttribute('action', 'mailto:support@safora.ai');
+  await expect(page.getByRole('button', { name: 'Start the tour' })).toBeHidden();
   await expect(page.locator('.metric')).toHaveCount(4);
   await context.close();
 });
@@ -164,6 +167,100 @@ for (const width of [390, 1440]) {
         id: item.id,
         targets: item.nodes.map((node) => node.target),
       })),
+    ).toEqual([]);
+  });
+}
+
+test('guided tour walks through the three views and can be ended', async ({ page }) => {
+  await page.goto('./');
+  await page.getByRole('button', { name: 'Start the tour' }).click();
+  const tour = page.getByRole('region', { name: 'Guided tour' });
+  await expect(tour).toContainText('Step 1 of 5');
+  await expect(page.locator('#preview-metrics')).toHaveClass(/is-tour-target/);
+  await expect(tour.getByRole('button', { name: 'Back' })).toBeDisabled();
+
+  await tour.getByRole('button', { name: 'Next' }).click();
+  await tour.getByRole('button', { name: 'Next' }).click();
+  await tour.getByRole('button', { name: 'Open the finding' }).click();
+  const dialog = page.getByRole('dialog');
+  await expect(dialog.locator('#dialog-resource')).toHaveText('demo-web-01');
+  await page.keyboard.press('Escape');
+
+  await tour.getByRole('button', { name: 'Next' }).click();
+  await expect(page.getByRole('tab', { name: views[1].tab })).toHaveAttribute('aria-selected', 'true');
+  await tour.getByRole('button', { name: 'Next' }).click();
+  await expect(page.getByRole('tab', { name: views[2].tab })).toHaveAttribute('aria-selected', 'true');
+  await expect(page.locator('.posture-card')).toHaveClass(/is-tour-target/);
+
+  await tour.getByRole('button', { name: 'Finish' }).click();
+  await expect(page.locator('.is-tour-target')).toHaveCount(0);
+  await expect(tour.getByRole('link', { name: 'Request a demo' })).toBeVisible();
+  await expect(tour.getByRole('button', { name: 'Restart the tour' })).toBeFocused();
+});
+
+test('demo request form validates and prepares an email without sending data', async ({ page }) => {
+  const requests: string[] = [];
+  await page.goto('./');
+  page.on('request', (request) => requests.push(request.method()));
+  const form = page.locator('#demo-form');
+  await form.getByRole('button', { name: 'Prepare my request' }).click();
+  await expect(page.locator('#demo-status')).toBeHidden();
+  expect(
+    await form.locator('#demo-name').evaluate((node: HTMLInputElement) => node.validity.valueMissing),
+  ).toBe(true);
+
+  await form.getByLabel('Full name').fill('Dana Example');
+  await form.getByLabel('Work email').fill('dana@example.com');
+  await form.getByLabel('Company').fill('Example & Co');
+  await form.getByLabel('What would you like to see?').selectOption('Cloud security');
+  await form.getByRole('button', { name: 'Prepare my request' }).click();
+
+  const retry = page.locator('#demo-status a');
+  await expect(retry).toBeVisible();
+  const href = (await retry.getAttribute('href')) ?? '';
+  expect(href.startsWith('mailto:support@safora.ai?subject=')).toBe(true);
+  expect(decodeURIComponent(href)).toContain('Company: Example & Co');
+  expect(decodeURIComponent(href)).toContain('Interested in: Cloud security');
+  expect(requests.filter((method) => method !== 'GET')).toEqual([]);
+});
+
+const useCases = [
+  { slug: 'exposure-management', name: 'Exposure management' },
+  { slug: 'cloud-security', name: 'Cloud security' },
+  { slug: 'identity-risk', name: 'Identity risk' },
+  { slug: 'control-validation', name: 'Control validation' },
+  { slug: 'risk-reporting', name: 'Risk reporting' },
+];
+
+test('use-case cards lead to their pages and back to the demo form', async ({ page }) => {
+  await page.goto('./');
+  await page.locator('.use-case-card', { hasText: 'Identity risk' }).click();
+  await expect(page).toHaveURL(/identity-risk.html$/);
+  await expect(page.getByRole('heading', { level: 1 })).toContainText('Identity risk');
+  await page.getByRole('link', { name: 'Get a demo' }).first().click();
+  await expect(page).toHaveURL(/#contact$/);
+  await expect(page.locator('#demo-form')).toBeVisible();
+});
+
+for (const useCase of useCases) {
+  test(`use-case page: ${useCase.name}`, async ({ page }) => {
+    const errors: string[] = [];
+    page.on('pageerror', (error) => errors.push(error.message));
+    page.on('response', (response) => {
+      if (response.status() >= 400) errors.push(`${response.status()} ${response.url()}`);
+    });
+    for (const width of [320, 768, 1440]) {
+      await page.setViewportSize({ width, height: 1000 });
+      await page.goto(`./use-cases/${useCase.slug}.html`);
+      await expect(page.getByRole('heading', { level: 1 })).toContainText(useCase.name);
+      await expect(page.locator('.use-case-card')).toHaveCount(4);
+      expect(await page.evaluate(() => document.documentElement.scrollWidth)).toBeLessThanOrEqual(width);
+    }
+    // Checked before the scan: axe re-fetches @import rules relative to the document, which 404s on nested pages.
+    expect(errors).toEqual([]);
+    const scan = await new AxeBuilder({ page }).withTags(['wcag2a', 'wcag2aa', 'wcag21aa']).analyze();
+    expect(
+      scan.violations.map((item) => ({ id: item.id, targets: item.nodes.map((node) => node.target) })),
     ).toEqual([]);
   });
 }
