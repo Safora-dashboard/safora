@@ -182,6 +182,127 @@
   }
 }
 
+/* Role switch above the explorer */
+.role-switch {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 18px;
+}
+
+.role-label {
+  margin-right: 6px;
+  color: var(--caption);
+  font-size: 12px;
+  font-weight: 650;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+}
+
+.role-switch button {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  min-height: 42px;
+  padding: 8px 16px;
+  border: 1px solid #d9cdf1;
+  border-radius: 999px;
+  background: #fff;
+  color: #2b2d55;
+  font-size: 14px;
+  font-weight: 600;
+  transition:
+    background 0.2s,
+    border-color 0.2s,
+    color 0.2s,
+    box-shadow 0.2s;
+}
+
+.role-switch button .icon {
+  width: 18px;
+  height: 18px;
+  color: var(--purple-dark);
+  transition: color 0.2s;
+}
+
+.role-switch button:hover {
+  border-color: var(--purple);
+  background: var(--purple-soft);
+}
+
+.role-switch button[aria-pressed='true'] {
+  border-color: var(--purple);
+  background: var(--purple);
+  box-shadow: 0 12px 24px -12px #7c3aedb0;
+  color: #fff;
+}
+
+.role-switch button[aria-pressed='true'] .icon {
+  color: #fff;
+}
+
+/* Interactive hero graph */
+.path-hint {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-bottom: 12px;
+  color: #c9c0e6;
+  font-size: 12.5px;
+  line-height: 1.5;
+}
+
+.path-hint .icon {
+  width: 16px;
+  height: 16px;
+  color: var(--gold);
+}
+
+.path-graph.is-interactive {
+  animation: none;
+}
+
+.is-interactive .g-node {
+  cursor: pointer;
+  outline: none;
+}
+
+.is-interactive .g-disc {
+  transition:
+    stroke-width 0.2s,
+    filter 0.2s;
+}
+
+.is-interactive .g-node:hover .g-disc {
+  filter: brightness(1.6);
+  stroke-width: 3;
+}
+
+.is-interactive .g-node:focus-visible .g-disc {
+  stroke: #fff;
+  stroke-width: 3.5;
+}
+
+.is-interactive .g-node.is-selected .g-disc {
+  filter: brightness(1.5) drop-shadow(0 0 10px #c4b0ff);
+  stroke: #fff;
+  stroke-width: 3;
+}
+
+.is-interactive .g-node.is-selected .g-label {
+  fill: #fff;
+}
+
+.path-insight.is-node .path-severity {
+  color: #ffd98a;
+}
+
+.path-insight.is-node .path-severity::before {
+  background: var(--gold);
+}
+
 /* Use-case cards */
 .use-cases-section {
   background: #fff;

@@ -15,9 +15,88 @@
       content="See how findings connect. One command center for exposure, identity, cloud and control validation."
     />
     <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="SAFORA" />
+    <meta property="og:url" content="https://safora.ai/" />
+    <meta property="og:image" content="https://safora.ai/assets/social-preview.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="SAFORA: follow the path from exposure to risk." />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="SAFORA | Follow the path from exposure to risk." />
+    <meta name="twitter:image" content="https://safora.ai/assets/social-preview.png" />
+    <link rel="canonical" href="https://safora.ai/" />
     <link rel="icon" href="./favicon.svg" type="image/svg+xml" />
     <link rel="stylesheet" href="./style.css" />
     <script type="module" src="./app.js"></script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "Organization",
+            "@id": "https://safora.ai/#organization",
+            "name": "SAFORA",
+            "url": "https://safora.ai/",
+            "logo": "https://safora.ai/assets/safora-logo.svg",
+            "email": "support@safora.ai"
+          },
+          {
+            "@type": "WebSite",
+            "@id": "https://safora.ai/#website",
+            "name": "SAFORA",
+            "url": "https://safora.ai/",
+            "publisher": {
+              "@id": "https://safora.ai/#organization"
+            }
+          },
+          {
+            "@type": "WebPage",
+            "name": "SAFORA | Follow the path from exposure to risk.",
+            "url": "https://safora.ai/",
+            "isPartOf": {
+              "@id": "https://safora.ai/#website"
+            }
+          },
+          {
+            "@type": "FAQPage",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "What is SAFORA?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "SAFORA is a cybersecurity command center that brings exposure, identity, cloud security, control validation and organizational risk into a shared workspace. Teams can move from a posture summary into the findings and evidence behind it."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Who is the platform designed for?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Security operations, cloud and identity teams, and security leaders who need a consistent perspective on their environment. A walkthrough can focus on the workflows most relevant to your team."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Does this preview use live security data?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "No. The interactive explorer uses illustrative demo data. The current product uses seeded integration data; discuss production data connections and remediation integrations with the team for your environment."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "How can we see the platform in action?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Email support@safora.ai to request a guided demo. Tell us about your environment and priorities so we can focus the conversation."
+                }
+              }
+            ]
+          }
+        ]
+      }
+    </script>
   </head>
   <body>
     <a class="skip-link" href="#main">Skip to content</a>
@@ -25,7 +104,7 @@
       <span class="scroll-progress" aria-hidden="true"></span>
       <div class="container header-inner">
         <a class="brand" href="#" aria-label="SAFORA home">
-          <img src="./assets/safora-logo.jpeg" width="148" height="50" alt="SAFORA" />
+          <img src="./assets/safora-logo-light.svg" width="148" height="50" alt="SAFORA" />
         </a>
         <button
           class="menu-toggle"
@@ -156,7 +235,7 @@
                 />
               </circle>
 
-              <g class="g-node">
+              <g class="g-node" data-node="internet">
                 <circle class="g-disc" cx="70" cy="110" r="28" />
                 <use
                   class="g-icon"
@@ -169,7 +248,7 @@
                 <text class="g-label" x="70" y="162">Internet</text>
                 <text class="g-sub" x="70" y="178">External reachability</text>
               </g>
-              <g class="g-node g-entry">
+              <g class="g-node g-entry" data-node="workload">
                 <circle class="g-pulse" cx="230" cy="190" r="30" />
                 <circle class="g-disc" cx="230" cy="190" r="30" />
                 <use
@@ -185,7 +264,7 @@
                 <text class="g-label" x="230" y="242">Exposed workload</text>
                 <text class="g-sub" x="230" y="258">Public-facing resource</text>
               </g>
-              <g class="g-node">
+              <g class="g-node" data-node="identity">
                 <circle class="g-disc" cx="400" cy="110" r="28" />
                 <use
                   class="g-icon"
@@ -198,7 +277,7 @@
                 <text class="g-label" x="400" y="162">Privileged identity</text>
                 <text class="g-sub" x="400" y="178">Elevated access</text>
               </g>
-              <g class="g-node g-critical">
+              <g class="g-node g-critical" data-node="data">
                 <circle class="g-pulse" cx="560" cy="210" r="30" />
                 <circle class="g-disc" cx="560" cy="210" r="30" />
                 <use
@@ -214,7 +293,7 @@
                 <text class="g-label" x="560" y="262">Critical data store</text>
                 <text class="g-sub" x="560" y="278">What is at stake</text>
               </g>
-              <g class="g-node g-control">
+              <g class="g-node g-control" data-node="control">
                 <circle class="g-disc" cx="370" cy="350" r="26" />
                 <use
                   class="g-icon"
@@ -227,7 +306,7 @@
                 <text class="g-label" x="370" y="398">Validated control</text>
                 <text class="g-sub" x="370" y="414">This route stops here</text>
               </g>
-              <g class="g-node g-dim">
+              <g class="g-node g-dim" data-node="service">
                 <circle class="g-disc" cx="520" cy="400" r="22" />
                 <use
                   class="g-icon"
@@ -240,11 +319,16 @@
                 <text class="g-sub" x="520" y="444">Internal service</text>
               </g>
             </svg>
+            <p class="path-hint" data-node-hint hidden>
+              <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                <use href="./assets/icons.svg#threat-hunting"></use></svg
+              >Select any node to see what it is and why it matters.
+            </p>
             <figcaption class="path-insight">
-              <div>
-                <span class="path-severity">PRIORITY INVESTIGATION</span>
-                <p class="path-insight-title">Exposed workload with privileged access</p>
-                <p>Follow the finding. Review the context. Examine the evidence.</p>
+              <div aria-live="polite">
+                <span class="path-severity" data-node-kicker>PRIORITY INVESTIGATION</span>
+                <p class="path-insight-title" data-node-title>Exposed workload with privileged access</p>
+                <p data-node-text>Follow the finding. Review the context. Examine the evidence.</p>
               </div>
               <a class="path-inspect" href="#platform" data-open-example aria-haspopup="dialog">
                 Inspect example
@@ -664,11 +748,29 @@
           <div class="section-heading platform-heading">
             <div>
               <p class="eyebrow">MEET YOUR COMMAND CENTER</p>
-              <h2 id="platform-title">Your environment.<br />In focus. In context.</h2>
+              <h2 id="platform-title" data-role-heading>Your environment.<br />In focus. In context.</h2>
             </div>
-            <p>
+            <p data-role-text aria-live="polite">
               Get a feel for the SAFORA experience.<br />Choose a view. Inspect a finding. Follow the context.
             </p>
+          </div>
+          <div class="role-switch" data-role-switch role="group" aria-label="View the platform as" hidden>
+            <span class="role-label">View as</span>
+            <button type="button" data-role="analyst" aria-pressed="false">
+              <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                <use href="./assets/icons.svg#threat-hunting"></use></svg
+              >Security analyst
+            </button>
+            <button type="button" data-role="cloud" aria-pressed="false">
+              <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                <use href="./assets/icons.svg#cloud-security"></use></svg
+              >Cloud team
+            </button>
+            <button type="button" data-role="leader" aria-pressed="false">
+              <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                <use href="./assets/icons.svg#crq-financial"></use></svg
+              >Security leader
+            </button>
           </div>
           <div class="tour" data-tour role="region" aria-label="Guided tour" hidden>
             <div class="tour-intro" data-tour-intro>
@@ -780,7 +882,7 @@
                 <aside class="dashboard-sidebar" aria-label="Illustrative platform sections">
                   <img
                     class="dashboard-logo"
-                    src="./assets/safora-logo.jpeg"
+                    src="./assets/safora-logo.svg"
                     width="130"
                     height="44"
                     alt="SAFORA"
@@ -924,7 +1026,7 @@
               </div>
             </div>
           </div>
-          <p class="platform-caption">
+          <p class="platform-caption" data-role-caption>
             A preview of the experience. A conversation about your environment is the next step.
           </p>
         </div>
@@ -1435,7 +1537,7 @@
       <div class="footer-top">
         <div>
           <a class="brand" href="#" aria-label="SAFORA home"
-            ><img src="./assets/safora-logo.jpeg" width="148" height="50" alt="SAFORA" loading="lazy"
+            ><img src="./assets/safora-logo.svg" width="148" height="50" alt="SAFORA" loading="lazy"
           /></a>
           <p>Cyber Security Command Center.<br />Clarity across your security environment.</p>
         </div>

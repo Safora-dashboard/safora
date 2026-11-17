@@ -208,8 +208,9 @@ h3 {
   position: sticky;
   z-index: 30;
   top: 0;
-  background: #ffffffeb;
-  border-bottom: 1px solid #efedf4;
+  background: #0b0920e6;
+  border-bottom: 1px solid #ffffff1a;
+  color: #fff;
   backdrop-filter: blur(16px);
 }
 .header-inner {
@@ -235,12 +236,16 @@ h3 {
 }
 .main-nav > a {
   padding-block: 12px;
-  color: #2f3354;
+  color: #d5cdee;
   font-size: 14px;
   font-weight: 600;
+  transition: color 0.18s;
 }
 .main-nav > a:hover {
-  color: var(--purple);
+  color: #fff;
+}
+.site-header :is(a, button):focus-visible {
+  outline-color: #d6bcff;
 }
 .header-cta {
   min-height: 44px;
@@ -439,15 +444,15 @@ h3 {
     width: 36px;
     height: 36px;
     padding: 9px;
-    border: 1px solid var(--border);
-    background: white;
+    border: 1px solid #ffffff33;
+    background: #ffffff0f;
     border-radius: 7px;
     flex-shrink: 0;
   }
   .menu-toggle > span {
     height: 1px;
     width: 100%;
-    background: var(--navy);
+    background: #fff;
     transition: transform 0.18s;
   }
   .menu-toggle[aria-expanded='true'] > span:first-child {
@@ -466,9 +471,9 @@ h3 {
     left: 0;
     right: 0;
     padding: 12px 18px 20px;
-    background: white;
-    border-bottom: 1px solid var(--border);
-    box-shadow: 0 12px 20px #070b3f0a;
+    background: #0f0c28;
+    border-bottom: 1px solid #ffffff1a;
+    box-shadow: 0 18px 30px #0000004d;
   }
   .main-nav.is-open {
     display: flex;

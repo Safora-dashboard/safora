@@ -264,3 +264,52 @@ for (const useCase of useCases) {
     ).toEqual([]);
   });
 }
+
+test('hero graph nodes explain themselves and toggle back to the summary', async ({ page }) => {
+  await page.goto('./');
+  const node = page.getByRole('button', { name: 'Privileged identity: what it is and why it matters' });
+  const title = page.locator('[data-node-title]');
+  await expect(title).toHaveText('Exposed workload with privileged access');
+  await node.click();
+  await expect(title).toHaveText('Privileged identity');
+  await expect(node).toHaveAttribute('aria-pressed', 'true');
+  await page.getByRole('button', { name: 'Validated control: what it is and why it matters' }).focus();
+  await page.keyboard.press('Enter');
+  await expect(title).toHaveText('Validated control');
+  await expect(node).toHaveAttribute('aria-pressed', 'false');
+  await page.keyboard.press(' ');
+  await expect(title).toHaveText('Exposed workload with privileged access');
+  await expect(page.getByRole('link', { name: 'Inspect example' })).toBeVisible();
+});
+
+test('role switch changes the explorer view and the copy around it', async ({ page }) => {
+  await page.goto('./');
+  const roles = page.getByRole('group', { name: 'View the platform as' });
+  await roles.getByRole('button', { name: 'Cloud team' }).click();
+  await expect(page.getByRole('tab', { name: views[1].tab })).toHaveAttribute('aria-selected', 'true');
+  await expect(page.locator('#platform-title')).toContainText('Your cloud estate.');
+  await expect(roles.getByRole('button', { name: 'Cloud team' })).toHaveAttribute('aria-pressed', 'true');
+  await roles.getByRole('button', { name: 'Security leader' }).click();
+  await expect(page.getByRole('tab', { name: views[2].tab })).toHaveAttribute('aria-selected', 'true');
+  await expect(page.locator('#posture-value')).toHaveText(views[2].score);
+  await expect(page.locator('[data-role-caption]')).toContainText('security leadership');
+  await expect(roles.getByRole('button', { name: 'Cloud team' })).toHaveAttribute('aria-pressed', 'false');
+});
+
+test('pages carry sharing metadata and the crawl files are served', async ({ page, request }) => {
+  await page.goto('./');
+  await expect(page.locator('link[rel="canonical"]')).toHaveAttribute('href', 'https://safora.ai/');
+  await expect(page.locator('meta[property="og:image"]')).toHaveAttribute(
+    'content',
+    'https://safora.ai/assets/social-preview.png',
+  );
+  const data = JSON.parse((await page.locator('script[type="application/ld+json"]').textContent()) ?? '{}');
+  expect(data['@graph'].map((item: { '@type': string }) => item['@type'])).toContain('FAQPage');
+  await expect(page.locator('.site-header .brand img')).toHaveAttribute(
+    'src',
+    './assets/safora-logo-light.svg',
+  );
+  expect((await request.get('./sitemap.xml')).status()).toBe(200);
+  expect((await request.get('./robots.txt')).status()).toBe(200);
+  expect((await request.get('./assets/social-preview.png')).status()).toBe(200);
+});

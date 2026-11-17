@@ -5,6 +5,8 @@ import { previews } from '../dist/modules/preview-data.js';
 import { ICON_NAMES } from '../dist/modules/icons.js';
 
 const root = new URL('../dist/', import.meta.url);
+/** The published origin; only canonical and sharing metadata may use absolute URLs. */
+const ORIGIN = 'https://safora.ai/';
 const iconSprite = await readFile(new URL('assets/icons.svg', root), 'utf8');
 const symbolIds = [...iconSprite.matchAll(/<symbol\s+id="([^"]+)"/g)].map((match) => match[1]);
 assert.equal(symbolIds.length, new Set(symbolIds).size, 'Icon symbols must be unique.');
@@ -57,10 +59,15 @@ for (const page of pages) {
       continue;
     }
     if (target === '#') continue;
-    assert.ok(/^(?:#|\.\.?\/)/.test(target), `Links must stay relative: ${target} in ${name}`);
+    const canonical = target.startsWith(ORIGIN);
+    assert.ok(canonical || /^(?:#|\.\.?\/)/.test(target), `Links must stay relative: ${target} in ${name}`);
 
     const [path, fragment] = target.split('#');
-    let destination = path ? new URL(path, page) : page;
+    let destination = canonical
+      ? new URL(path.slice(ORIGIN.length), root)
+      : path
+        ? new URL(path, page)
+        : page;
     if (destination.pathname.endsWith('/')) destination = new URL('index.html', destination);
     assert.ok(destination.href.startsWith(root.href), `Link leaves the site: ${target} in ${name}`);
     await access(destination);
@@ -90,6 +97,28 @@ async function checkImports(directory) {
     }
   }
 }
+
+// Sharing metadata and crawl files point at real, published files.
+for (const page of pages) {
+  const html = await readFile(page, 'utf8');
+  const expected = ORIGIN + page.href.slice(root.href.length).replace(/^index\.html$/, '');
+  assert.ok(html.includes(`<link rel="canonical" href="${expected}"`), `Canonical URL mismatch: ${expected}`);
+  for (const match of html.matchAll(/<meta (?:property|name)="(?:og|twitter):image" content="([^"]+)"/g)) {
+    assert.ok(match[1].startsWith(ORIGIN), `Sharing image must be absolute: ${match[1]}`);
+    await access(new URL(match[1].slice(ORIGIN.length), root));
+  }
+  for (const match of html.matchAll(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g)) {
+    JSON.parse(match[1]);
+  }
+}
+const sitemap = await readFile(new URL('sitemap.xml', root), 'utf8');
+const listed = [...sitemap.matchAll(/<loc>([^<]+)<\/loc>/g)].map((match) => match[1]);
+assert.equal(listed.length, pages.length, 'The sitemap must list every page.');
+for (const url of listed) {
+  assert.ok(url.startsWith(ORIGIN), `Sitemap URL outside the site: ${url}`);
+  await access(new URL(url.slice(ORIGIN.length) || 'index.html', root));
+}
+assert.ok((await readFile(new URL('robots.txt', root), 'utf8')).includes(`Sitemap: ${ORIGIN}sitemap.xml`));
 
 await checkImports(root);
 console.log(
